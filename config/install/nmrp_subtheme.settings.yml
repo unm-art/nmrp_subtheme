@@ -5,7 +5,7 @@ features:
   favicon: true
 logo:
   use_default: false
-  path: 'public://NM-Rare-Plants-Logo-Simple-F2_0.png'
+  path: 'themes/custom/nmrp_subtheme/logo.png'
 favicon:
   use_default: true
   path: ''
