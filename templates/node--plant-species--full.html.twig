@@ -1,0 +1,124 @@
+{#
+node--plant-species--full.html.twig
+#}
+
+<article{{ attributes }}>
+
+    <div{{ content_attributes }}>
+
+        {{  content.field_plant_images }}
+
+        {{  content.field_family }}
+
+        {{  content.field_scinamewithauthor }}
+
+        {{  content.field_synonym }}
+
+        {{  content.field_commname }}
+
+        {{  content.field_redcode }}
+
+        {{  content.field_description }}
+
+        {{  content.field_similarspecies }}
+
+        {{ content.field_county_thumbnail }}
+
+        {{  content.field_distribution }}
+
+        {{ content.field_habitat }}
+
+        {{ content.field_remarks }}
+
+        {{ content.field_literature }}
+
+        {{ content.field_compiler }}
+
+
+
+
+
+{#        {{ content.field_counties }}#}
+
+{#        {{ content.field_speciesid }}#}
+
+{#        {{ content.field_elcode }}#}
+
+{#        {{ content.field_nmrptcstatus }}#}
+
+{#        {{ content.field_srclink }}#}
+
+{#        {{ content.field_srcmap }}#}
+
+
+
+
+        <table>
+            <caption>Agency Status</caption>
+            <tr>
+                <th>USFWS</th>
+                <th>State of NM</th>
+                <th>USFS</th>
+                <th>BLM</th>
+                <th>Navajo Nation</th>
+                <th>State Conservation Rank</th>
+                <th>Global Conservation Rank</th>
+                <th>RED Code</th>
+            </tr>
+            <tr>
+                <td>{{  content.field_fedstatusinnm.0 }}</td>
+                <td>{{  content.field_agency_statestatus.0 }}</td>
+                <td>{{  content.field_agency_usfs.0 }}</td>
+                <td>{{  content.field_agency_blm.0 }}</td>
+                <td>{{  content.field_agency_navajo.0 }}</td>
+                <td>{{  content.field_agency_staterank.0 }}</td>
+                <td>{{  content.field_agency_globalrank.0 }}</td>
+                <td>{{  content.field_redcode.0 }}</td>
+            </tr>
+        </table>
+
+        <p>Rare Plant Conservation Scorecard Summary<p>
+
+        <table>
+            <caption>Conservation Status</caption>
+            <tr>
+                <th>Taxon</th>
+                <th>{{ content.field_strategy_species['#title'] }}</th>
+
+                {% if not content.field_conservation.0 == '' %}
+                <th>{{ content.field_conservation['#title'] }}</th>
+                {% endif %}
+
+                {% if not content.field_strategy_threats.0 == '' %}
+                <th>{{ content.field_strategy_threats['#title'] }}</th>
+                {% endif %}
+
+                {% if not content.field_strategy_actions.0 == '' %}
+                <th>{{ content.field_strategy_actions['#title'] }}</th>
+                {% endif %}
+            </tr>
+            <tr>
+                <td>{{ content.field_sciname.0 }}</td>
+                <td>{{ content.field_strategy_species.0 }}</td>
+
+                {% if not content.field_conservation.0 == '' %}
+                <td>{{ content.field_conservation.0 }}</td>
+                {% endif %}
+
+                {% if not content.field_strategy_threats.0 == '' %}
+                <td>{{ content.field_strategy_threats.0 }}</td>
+                {% endif %}
+
+                {% if not content.field_strategy_actions.0 == '' %}
+                <td>{{ content.field_strategy_actions.0 }}</td>
+                {% endif %}
+
+            </tr>
+        </table>
+
+    </div>
+
+        {{ content.field_county_map }}
+
+</article>
+
