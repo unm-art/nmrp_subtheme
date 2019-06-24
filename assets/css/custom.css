@@ -16,6 +16,21 @@ a:active {
   color:#000;
 }
 
+/* Header */
+#masthead {
+    background-color: #FFFFFF;
+}
+
+/* Main Menu */
+#main-menu li {
+    color: #fff;
+}
+#main-menu li a {
+    color: #588C63;
+}
+#main-menu li a:hover, #main-menu li a:active, #main-menu a.active, #main-menu > ul > li > a.active-trail {
+    color:#000;
+}
 
 
 /* Home Page
