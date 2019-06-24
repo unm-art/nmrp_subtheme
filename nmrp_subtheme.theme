@@ -11,6 +11,8 @@
  * Override or insert variables into the page template.
  */
 function nmrp_subtheme_preprocess_page(&$variables) {
+  $site_config = \Drupal::config('system.site');
+
   $variables['slideshow_display'] = theme_get_setting('slideshow_display','nmrp_subtheme');
 
   $variables['slide1_head'] = theme_get_setting('slide1_head','nmrp_subtheme');
@@ -60,15 +62,16 @@ function nmrp_subtheme_preprocess_page(&$variables) {
    $variables['slide3_image'] = $image_path;
 
   $variables['this_year']= date('Y');
+  $variables['site_name'] = $site_config->get('name');
 
   $variables['preface_col'] = ( ( (bool) $variables['page']['preface_first'] + (bool) $variables['page']['preface_second'] + (bool) $variables['page']['preface_third'] ) );
   $variables['preface_col'] = ($variables['preface_col'] > 0)
     ? (12 / $variables['preface_col']) : 0;
 
+  // Resize footer columns based on how many blocks are placed in the footer regions.
   $variables['footer_col'] = ( ( (bool) $variables['page']['footer_first'] + (bool) $variables['page']['footer_second'] + (bool) $variables['page']['footer_third'] + (bool) $variables['page']['footer_fourth'] ) );
   $variables['footer_col'] = ($variables['footer_col'] > 0)
     ? (12 / $variables['footer_col']) : 0;
-
 
 }
 

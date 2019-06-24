@@ -22,6 +22,30 @@ a:active {
     background-color: #FFFFFF;
 }
 
+/* Footer */
+#bottom, .site-footer {
+    background: #588C63;
+    color: #FFFFFF;
+}
+#bottom { border-top: 5px solid #ffffff; }
+#bottom a, .site-footer a { color: #FFFFFF; }
+#bottom a:visited, .site-footer a:visited { color: #FFFFFF; }
+#bottom a:hover, #bottom a:active, #bottom a.active, #bottom a.active-trail,
+.site-footer a:hover, .site-footer a:active, .site-footer a.active, .site-footer a.active-trail { color:#000; }
+#bottom .contextual-links a {  color: #000; }
+/* #bottom li,
+#bottom li a {
+    color: #FFFFFF;
+}
+#bottom li a:visited {
+    color: #FFFFFF;
+}
+#bottom li a:hover, #bottom li a:active, #bottom a.active, #bottom > ul > li > a.active-trail {
+    color:#000;
+} */
+.footer-block,
+.fcred { color: #FFFFFF; }
+
 /* Main Menu */
 #main-menu li {
     color: #fff;
@@ -116,3 +140,18 @@ caption {
 .field.field--name-field-county-thumbnail {
     float: left;
 }
+
+
+/* Blocks
+================================================== */
+
+/* NHNM Link */
+.nhnm_logo a {
+    background: url('../images/nhnm-logo.png') no-repeat;
+    display: inline-block;
+    height: 62px;
+    width: 274px;
+    text-indent: -9999px;
+}
+
+
