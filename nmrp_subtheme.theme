@@ -24,7 +24,7 @@ function nmrp_subtheme_preprocess_page(&$variables) {
     $image_path = file_create_url($uri);
    }
    else {
-    $image_path = drupal_get_path('theme', 'nexus') . '/assets/images/slide-image-1.jpg';
+    $image_path = drupal_get_path('theme', 'nmrp_subtheme') . '/assets/images/slide-image-1.jpg';
    }
    $variables['slide1_image'] = $image_path;
 
@@ -40,7 +40,7 @@ function nmrp_subtheme_preprocess_page(&$variables) {
     $image_path = file_create_url($uri);
    }
    else {
-    $image_path = drupal_get_path('theme', 'nexus') . '/assets/images/slide-image-2.jpg';
+    $image_path = drupal_get_path('theme', 'nmrp_subtheme') . '/assets/images/slide-image-2.jpg';
    }
    $variables['slide2_image'] = $image_path;
 
@@ -55,7 +55,7 @@ function nmrp_subtheme_preprocess_page(&$variables) {
     $image_path = file_create_url($uri);
    }
    else {
-    $image_path =  drupal_get_path('theme', 'nexus') . '/assets/images/slide-image-3.jpg';
+    $image_path =  drupal_get_path('theme', 'nmrp_subtheme') . '/assets/images/slide-image-3.jpg';
    }
    $variables['slide3_image'] = $image_path;
 

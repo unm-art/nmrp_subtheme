@@ -7,19 +7,19 @@ logo:
   use_default: false
   path: 'themes/custom/nmrp_subtheme/logo.png'
 favicon:
-  use_default: true
-  path: ''
+  use_default: false
+  path: 'themes/custom/nmrp_subtheme/favicon.png'
 slideshow_display: 1
 show_breadcrumbs: 1
-slide1_head: 'Sample product'
-slide2_head: 'Sample service'
-slide3_head: 'Contact us'
-slide1_desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt elit, sed do eiusmod tempor...'
-slide2_desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do Lorem ipsum dolor sit amet irure dolor in reprehenderit...'
-slide3_desc: 'Duis aute irure dolor in reprehenderit inLorem ipsum dolor sit amet, consectetur do Lorem ipsum dolor sit amet irure...'
-slide1_url: 'node/1'
-slide2_url: 'node/2'
-slide3_url: 'node/3'
+slide1_head: 'New Mexico Rare Plants'
+slide2_head: ''
+slide3_head: ''
+slide1_desc: "Our Mission Is To Form A Current And Accurate List Of New Mexico's Rare Plants"
+slide2_desc: ''
+slide3_desc: ''
+slide1_url: ''
+slide2_url: ''
+slide3_url: ''
 slide1_image: {  }
 slide2_image: {  }
 slide3_image: {  }
