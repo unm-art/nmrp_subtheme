@@ -1,5 +1,5 @@
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -7,7 +7,7 @@ dependencies:
     - nmrp_subtheme
 id: nmrp_subtheme_powered
 theme: nmrp_subtheme
-region: footer_second
+region: footer_first
 weight: 0
 provider: null
 plugin: system_powered_by_block

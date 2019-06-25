@@ -199,22 +199,22 @@
       <div class="container">
         <div class="row">
           {% if page.footer_first %}
-            <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
+            <div class="bottom__first {{ 'footer-block col-sm-' ~ footer_col }}">
               {{ page.footer_first }}
             </div>
           {% endif %}
           {% if page.footer_second %}
-            <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
+            <div class="bottom__second {{ 'footer-block col-sm-' ~ footer_col }}">
               {{ page.footer_second }}
             </div>
           {% endif %}
           {% if page.footer_third %}
-            <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
+            <div class="bottom__third {{ 'footer-block col-sm-' ~ footer_col }}">
               {{ page.footer_third }}
             </div>
           {% endif %}
           {% if page.footer_fourth %}
-            <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
+            <div class="bottom__fourth {{ 'footer-block col-sm-' ~ footer_col }}">
               {{ page.footer_fourth }}
             </div>
           {% endif %}
@@ -227,7 +227,7 @@
     <div class="container">
       <div class="row">
         <div class="fcred col-sm-12">
-          {{ "Copyright"|t }} &copy; {{ this_year }}, <a href="{{ front_page }}">{{ site_name }}</a>. {{ "Theme by"|t }} <a href="http://www.devsaran.com" target="_blank">Devsaran</a>.
+          {{ "Copyright"|t }} &copy; {{ this_year }}, <a href="{{ front_page }}">{{ site_name }}</a>.
         </div>
       </div>
     </div>
