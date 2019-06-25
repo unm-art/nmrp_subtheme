@@ -67,6 +67,14 @@ h6 { font-size: 16px; }
     color:#000;
 }
 
+/* Hero Area */
+#preface-area {
+    background: none repeat scroll 0 0 #588C63;
+    border-bottom: 5px solid #FFFFFF;
+    border-top: 5px solid #FFFFFF;
+    padding: 40px 0 20px;
+}
+
 
 /* Home Page
 ================================================== */
