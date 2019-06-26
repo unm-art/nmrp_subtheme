@@ -36,18 +36,19 @@ h6 { font-size: 16px; }
 #colophon { padding: 0 0 20px 0; }
 #colophon .fcred { text-align: center; padding: 0; }
 
-/* Footer Menu */
+/* Footer Menu
+-------------------------------------------------- */
 @media screen and (min-width: 997px) {
-    #bottom .menu ul {
+    #bottom .bottom__third nav ul:not(.contextual-links) {
         max-width: 50%;
         margin: 0 0 0 auto;
     }
 }
 @media screen and (max-width: 768px) {
-    #bottom .menu ul {
+    #bottom nav ul:not(.contextual-links) {
         margin-left: 0;
     }
-    #bottom .menu ul li a {
+    #bottom nav ul:not(.contextual-links) li a {
         width: 100%;
         padding: 20px;
         display: block;
