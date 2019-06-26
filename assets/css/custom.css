@@ -1,30 +1,48 @@
-/* Body & Main
-================================================== */
+/*===========================================*
+/* Body and Main
+/*===========================================*/
 
 body {
     background-color: #E6EAF0;
     color: #333333;
 }
 
-/* Links */
-a { color: #588C63; }
+/* Links
+-------------------------------------------------- */
+a, a:link { color: #588C63; }
 a:visited { color: #4E7A50; }
 a:hover, a:focus, a:active { color:#333; }
 
-/* Typography */
-h1 { font-size: 38px; }
+#main-content a, #main-content a:link { text-decoration: underline; }
+#main-content a:visited { text-decoration: underline; }
+#main-content a:hover, #main-content a:focus, #main-content a:active { text-decoration: underline; }
+
+/* Typography
+-------------------------------------------------- */
+/* h1 { font-size: 38px; }
 h2 { font-size: 32px; }
 h3 { font-size: 26px; }
 h4 { font-size: 20px; }
 h5 { font-size: 18px; }
-h6 { font-size: 16px; }
+h6 { font-size: 16px; } */
 
-/* Header */
-#masthead {
-    background-color: #FFFFFF;
+/* Forms
+-------------------------------------------------- */
+
+fieldset {
+    position: relative;
+    top: 0;
+}
+fieldset legend {
+    position: relative;
 }
 
-/* Footer */
+/* Header
+-------------------------------------------------- */
+#masthead { background-color: #FFFFFF; }
+
+/* Footer
+-------------------------------------------------- */
 #bottom, .site-footer { background: #588C63; color: #FFFFFF; }
 #bottom { border-top: 5px solid #ffffff; padding: 20px 0; }
 #bottom a, .site-footer a { color: #FFFFFF; }
@@ -57,7 +75,8 @@ h6 { font-size: 16px; }
     }
 }
 
-/* Main Menu */
+/* Main Menu
+-------------------------------------------------- */
 #main-menu li {
     color: #fff;
 }
@@ -68,7 +87,8 @@ h6 { font-size: 16px; }
     color:#000;
 }
 
-/* Hero Area */
+/* Hero Area / Preface Area
+-------------------------------------------------- */
 #preface-area {
     background: none repeat scroll 0 0 #588C63;
     border-bottom: 5px solid #FFFFFF;
@@ -77,25 +97,16 @@ h6 { font-size: 16px; }
 }
 
 
-/* Home Page
-================================================== */
 
-/* Slider */
-/* .doverlay {
-    background: none;
-} */
-.flex-direction-nav a {
-    background-image: url(../images/bg_direction_nav.png);
+/*===========================================*
+/* Content
+/*===========================================*/
+
+h1.page-title { font-weight: normal; }
+
+.node--view-mode-teaser {
+    margin-bottom: 1em;
 }
-
-
-
-/* Generic Node Styles
-================================================== */
-
- .node--view-mode-teaser {
-     margin-bottom: 1em;
- }
 
 .field {
     margin-bottom: 1em;
@@ -107,10 +118,60 @@ h6 { font-size: 16px; }
     display: inline;
 }
 
+img.align-left { margin: 0 10px 10px 0; }
+img.align-right { margin: 0 0 10px 10px; }
 
 
-/* Plant Species NOde
-================================================== */
+/* Layout Builder
+-------------------------------------------------- */
+@media screen and (min-width: 40em) {
+    .layout--twocol-section.layout--twocol-section--50-50 > .layout__region--first,
+    .layout--twocol-section.layout--twocol-section--50-50 > .layout__region--second {
+        flex: 0 1 48%;
+        margin: 1%;
+    }
+
+    .layout--twocol-section.layout--twocol-section--33-67 > .layout__region--first,
+    .layout--twocol-section.layout--twocol-section--67-33 > .layout__region--second {
+        flex: 0 1 31%;
+        margin: 1%;
+    }
+
+    .layout--twocol-section.layout--twocol-section--33-67 > .layout__region--second,
+    .layout--twocol-section.layout--twocol-section--67-33 > .layout__region--first {
+        flex: 0 1 65%;
+        margin: 1%;
+    }
+
+    .layout--twocol-section.layout--twocol-section--25-75 > .layout__region--first,
+    .layout--twocol-section.layout--twocol-section--75-25 > .layout__region--second {
+        flex: 0 1 23%;
+        margin: 1%;
+    }
+
+    .layout--twocol-section.layout--twocol-section--25-75 > .layout__region--second,
+    .layout--twocol-section.layout--twocol-section--75-25 > .layout__region--first {
+        flex: 0 1 73%;
+        margin: 1%;
+    }
+}
+
+/* Home Page
+-------------------------------------------------- */
+
+/* Slider */
+/* .doverlay {
+    background: none;
+} */
+.flex-direction-nav a {
+    background-image: url(../images/bg_direction_nav.png);
+}
+
+
+
+
+/* Plant Species Node
+-------------------------------------------------- */
 
 /* Teaser */
 .node--type-plant-species.node--view-mode-teaser footer .meta {
@@ -161,10 +222,12 @@ caption {
 }
 
 
+/*===========================================*
 /* Blocks
-================================================== */
+/*===========================================*/
 
-/* NHNM Link */
+/* NHNM Link (footer)
+-------------------------------------------------- */
 @media screen and (min-width: 767px) {
     .nhnm_logo a {
         background: url('../images/nhnm-logo.png') no-repeat;
@@ -175,7 +238,8 @@ caption {
     }
 }
 
-/* NMRP Link */
+/* NMRP Link (footer)
+-------------------------------------------------- */
 @media screen and (min-width: 767px) {
     .bottom__second.footer-block .nmrp_logo {
         text-align: center;
