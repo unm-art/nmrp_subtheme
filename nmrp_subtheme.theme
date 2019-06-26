@@ -11,13 +11,19 @@
  * Override or insert variables into the page template.
  */
 function nmrp_subtheme_preprocess_page(&$variables) {
+  // Access site information configured at /admin/config/system/site-information
   $site_config = \Drupal::config('system.site');
+  
+  // Access theme information
+  $theme_name = 'nmrp_subtheme';
+  $theme_handler = \Drupal::service('theme_handler');
+  $theme_obj = $theme_handler->getTheme($theme_name);
 
-  $variables['slideshow_display'] = theme_get_setting('slideshow_display','nmrp_subtheme');
+  $variables['slideshow_display'] = theme_get_setting('slideshow_display', $theme_name);
 
-  $variables['slide1_head'] = theme_get_setting('slide1_head','nmrp_subtheme');
-  $variables['slide1_desc'] = check_markup(theme_get_setting('slide1_desc','nmrp_subtheme'), 'full_html');
-  $variables['slide1_url'] = theme_get_setting('slide1_url','nmrp_subtheme');
+  $variables['slide1_head'] = theme_get_setting('slide1_head', $theme_name);
+  $variables['slide1_desc'] = check_markup(theme_get_setting('slide1_desc', $theme_name), 'full_html');
+  $variables['slide1_url'] = theme_get_setting('slide1_url', $theme_name);
   // slide1_image
   $fid = theme_get_setting("slide1_image", "nmrp_subtheme");
   if (!empty($fid)) {
@@ -26,14 +32,14 @@ function nmrp_subtheme_preprocess_page(&$variables) {
     $image_path = file_create_url($uri);
    }
    else {
-    $image_path = drupal_get_path('theme', 'nmrp_subtheme') . '/assets/images/slide-image-1.jpg';
+    $image_path = DIRECTORY_SEPARATOR . $theme_obj->getPath() . '/assets/images/slide-image-1.jpg';
    }
    $variables['slide1_image'] = $image_path;
 
 
-  $variables['slide2_head'] = theme_get_setting('slide2_head','nmrp_subtheme');
-  $variables['slide2_desc'] = check_markup(theme_get_setting('slide2_desc','nmrp_subtheme'), 'full_html');
-  $variables['slide2_url'] = theme_get_setting('slide2_url','nmrp_subtheme');
+  $variables['slide2_head'] = theme_get_setting('slide2_head', $theme_name);
+  $variables['slide2_desc'] = check_markup(theme_get_setting('slide2_desc', $theme_name), 'full_html');
+  $variables['slide2_url'] = theme_get_setting('slide2_url', $theme_name);
   // slide2_image
   $fid = theme_get_setting("slide2_image", "nmrp_subtheme");
   if (!empty($fid)) {
@@ -42,13 +48,13 @@ function nmrp_subtheme_preprocess_page(&$variables) {
     $image_path = file_create_url($uri);
    }
    else {
-    $image_path = drupal_get_path('theme', 'nmrp_subtheme') . '/assets/images/slide-image-2.jpg';
+    $image_path = DIRECTORY_SEPARATOR . $theme_obj->getPath() . '/assets/images/slide-image-2.jpg';
    }
    $variables['slide2_image'] = $image_path;
 
-  $variables['slide3_head'] = theme_get_setting('slide3_head','nmrp_subtheme');
-  $variables['slide3_desc'] = check_markup(theme_get_setting('slide3_desc','nmrp_subtheme'), 'full_html');
-  $variables['slide3_url'] = theme_get_setting('slide3_url','nmrp_subtheme');
+  $variables['slide3_head'] = theme_get_setting('slide3_head', $theme_name);
+  $variables['slide3_desc'] = check_markup(theme_get_setting('slide3_desc', $theme_name), 'full_html');
+  $variables['slide3_url'] = theme_get_setting('slide3_url', $theme_name);
   // slide3_image
   $fid = theme_get_setting("slide3_image", "nmrp_subtheme");
   if (!empty($fid)) {
@@ -57,7 +63,7 @@ function nmrp_subtheme_preprocess_page(&$variables) {
     $image_path = file_create_url($uri);
    }
    else {
-    $image_path =  drupal_get_path('theme', 'nmrp_subtheme') . '/assets/images/slide-image-3.jpg';
+    $image_path = DIRECTORY_SEPARATOR . $theme_obj->getPath() . '/assets/images/slide-image-3.jpg';
    }
    $variables['slide3_image'] = $image_path;
 
