@@ -89,20 +89,20 @@ fieldset legend {
 
 /* Hero Area / Preface Area
 -------------------------------------------------- */
-#preface-area {
-    /* background: #588C63 url(/themes/custom/nmrp_subtheme/assets/images/header-img.png) no-repeat scroll 50% 0 ; */
-    background-size: 100% 100%;
-    background-image: url(/themes/custom/nmrp_subtheme/assets/images/header-img.png);
-    background-repeat: no-repeat;
-    border-bottom: 5px solid #FFFFFF;
-    border-top: 5px solid #FFFFFF;
-    padding: 75px 0;
-}
-#preface-area #block-siteheader * {
-    margin: 0;
-    padding: 0;
-}
 
+#preface-area { background: #588C63; display: none; }
+@media screen and (min-width: 768px) {
+    #preface-area {
+        /* background: #588C63 url(/themes/custom/nmrp_subtheme/assets/images/header-img.png) no-repeat scroll 50% 0 ; */
+        background-size: 100% 100%;
+        background-image: url(/themes/custom/nmrp_subtheme/assets/images/header-img.png);
+        background-repeat: no-repeat;
+        border-bottom: 5px solid #FFFFFF;
+        border-top: 5px solid #FFFFFF;
+        display: block;
+        padding: 75px 0;
+    }
+}
 
 
 /*===========================================*
@@ -261,6 +261,8 @@ caption {
     }
 }
 
+/* NMRP Site Header (preface)
+-------------------------------------------------- */
 #preface-area #nmrp-site-header {
     font-size: 42px;
     font-weight: bold;
