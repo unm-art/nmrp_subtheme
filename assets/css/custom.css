@@ -90,10 +90,17 @@ fieldset legend {
 /* Hero Area / Preface Area
 -------------------------------------------------- */
 #preface-area {
-    background: none repeat scroll 0 0 #588C63;
+    /* background: #588C63 url(/themes/custom/nmrp_subtheme/assets/images/header-img.png) no-repeat scroll 50% 0 ; */
+    background-size: 100% 100%;
+    background-image: url(/themes/custom/nmrp_subtheme/assets/images/header-img.png);
+    background-repeat: no-repeat;
     border-bottom: 5px solid #FFFFFF;
     border-top: 5px solid #FFFFFF;
-    padding: 40px 0 20px;
+    padding: 75px 0;
+}
+#preface-area #block-siteheader * {
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -254,5 +261,8 @@ caption {
     }
 }
 
-
+#preface-area #nmrp-site-header {
+    font-size: 42px;
+    font-weight: bold;
+}
 
