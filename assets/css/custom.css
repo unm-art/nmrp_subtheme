@@ -229,6 +229,79 @@ caption {
 }
 
 
+/* Advanced Search Form
+-------------------------------------------------- */
+form#search-form {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+form#search-form .form-item.js-form-type-select label {
+    display: block;
+}
+
+
+form#search-form select#edit-field-sciname, 
+form#search-form select#edit-counties {
+    height: 200px;
+    width: 300px;
+}
+
+form#search-form .form-item {
+    padding: 10px;
+}
+
+form#search-form fieldset {
+    background: transparent;
+    top: 10px;
+}
+
+form#search-form fieldset legend {
+    background: transparent;
+    border: 0 none;
+    font-weight: bold;
+    font-size: 13px;
+    position: relative;
+    top: 0;
+}
+
+form#search-form .fieldset-wrapper {
+    margin: 0;
+}
+
+form#search-form .form-checkboxes .form-item {
+    margin: 0;
+    padding: 0;
+}
+
+form#search-form fieldset .form-item select {
+    height: 150px;
+    width: 100px;
+}
+
+form#search-form #edit-conservation-ranks .fieldset-wrapper {
+    display: flex;
+}
+
+form#search-form #edit-conservation-ranks legend {
+    text-align: center;
+}
+
+form#search-form #edit-strategy-overallstatus, 
+form#search-form #edit-nmrptc-status {
+    height: 100px;
+}
+
+form#search-form #edit-names {
+    flex: 0 1 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+form#search-form .form-actions {
+    flex: 0 1 100%;
+}
+
 /*===========================================*
 /* Blocks
 /*===========================================*/
