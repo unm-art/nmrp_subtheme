@@ -82,3 +82,19 @@ function nmrp_subtheme_preprocess_page(&$variables) {
 }
 
 
+
+
+/**
+ * Implements template_theme_suggestions_node_HOOK_alter().
+ * Add theme suggestions to the view exposed forms.
+ */
+function nmrp_subtheme_theme_suggestions_views_exposed_form_alter(&$suggestions, $vars, $hook) {
+  // kint($vars['form']['#theme']);
+
+  $form = $vars['form'];
+  if($form['#id'] != 'views-exposed-form-nmrp-search-page-1') {
+    return FALSE;
+  }
+
+  $suggestions[] = 'views_exposed_form__nmrp_search_simple';
+}
