@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    theme:
+      - nmrp_subtheme
+name: nmrp_thumbnail
+label: 'NMRP Thumbnail (150x150)'
+effects:
+  752dc9a5-5c71-43af-87a3-ed4e23cf265e:
+    uuid: 752dc9a5-5c71-43af-87a3-ed4e23cf265e
+    id: image_scale
+    weight: -9
+    data:
+      width: 150
+      height: null
+      upscale: false
+  d18ea80d-025f-4fcd-81af-c6f3681d0a46:
+    uuid: d18ea80d-025f-4fcd-81af-c6f3681d0a46
+    id: image_scale_and_crop
+    weight: -10
+    data:
+      width: 150
+      height: 150
+      anchor: center-center
