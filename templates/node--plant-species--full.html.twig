@@ -6,119 +6,207 @@ node--plant-species--full.html.twig
 
     <div{{ content_attributes }}>
 
-        {{  content.field_plant_images }}
+        <!-- DEFAULT IMAGE -->
+        {% set defaultimg = node.field_plant_images[0] %}
+        {% for key, item in node.field_plant_images %}
+            {% if (item.entity.field_image_type.value[0].target_id == 2) %}
+                {% set defaultimg = node.field_plant_images[key] %}
+            {% endif %}
+        {% endfor %}
 
-        {{  content.field_family }}
+        <!-- THUMBNAIL IMAGES -->
+        {% if node.field_plant_images|length > 0 %}
+        <div id="thumb_selector" style="margin-bottom: 20px;">
+            <ul class="thumb_album">
+                {% for key, item in node.field_plant_images|reverse(true) %}
+                    {% set imagestyle = {
+                        '#theme':      'image_style',
+                        '#style_name': 'nmrp_thumbnail',
+                        '#attributes': { class: 'img-responsive img-thumbnail' },
+                        '#uri':        node.field_plant_images[key].entity.field_media_image[0].entity.uri.value,
+                        }
+                    %}
+                    <li id="thumb_img_{{ key }}">
+                        <a href="{{ file_url(node.field_plant_images[key].entity.field_media_image[0].entity.uri.value) }}" class="nmrp-img">
+                            {{ imagestyle }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        <!-- END THUMBNAIL IMAGES -->
 
-        {{  content.field_scinamewithauthor }}
+        <h1 class="node-page-title">{{ node.title.0.value }}</h1>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="{% if defaultimg %}col-lg-5{% endif %}">
+                    <a href="{{ file_url(defaultimg.entity.field_media_image[0].entity.uri.value) }}" class="nmrp-img">
+                    {{ {
+                        '#theme':      'image_style',
+                        '#style_name': 'nmrp_large',
+                        '#attributes': { class: 'img-responsive img-thumbnail' },
+                        '#uri':        defaultimg.entity.field_media_image[0].entity.uri.value,
+                        } }}
+                    </a>
+                </div>
+                <div class="{% if defaultimg %}col-lg-7{% else %}col-lg-12{% endif %}">
+                    {{  content.field_family }}
+                    {{  content.field_scinamewithauthor }}
+                    {{  content.field_synonyms }}
+                    {{  content.field_commname }}
 
-        {{  content.field_synonym }}
+                    <!-- AGENCY STATUS -->
+                    <table>
+                        <caption>Agency Status</caption>
+                        <tr>
+                            <th>USFWS</th>
+                            <th>State of NM</th>
+                            <th>USFS</th>
+                            <th>BLM</th>
+                            <th>Navajo Nation</th>
+                            <th>State Conservation Rank</th>
+                            <th>Global Conservation Rank</th>
+                            <th>RED Code</th>
+                        </tr>
+                        <tr>
+                            <td>{{  content.field_fedstatusinnm.0 }}</td>
+                            <td>{{  content.field_agency_statestatus.0 }}</td>
+                            <td>{{  content.field_agency_usfs.0 }}</td>
+                            <td>{{  content.field_agency_blm.0 }}</td>
+                            <td>{{  content.field_agency_navajo.0 }}</td>
+                            <td>{{  content.field_agency_staterank.0 }}</td>
+                            <td>{{  content.field_agency_globalrank.0 }}</td>
+                            <td>{{  content.field_redcode.0 }}</td>
+                        </tr>
+                    </table>
 
-        {{  content.field_commname }}
+                    <!-- CONSERVATION STATUS-->
+                    {% if node.field_strategy_species.0.value == 1 %}
+                    <table>
+                        <caption>Conservation Status</caption>
+                        <tr>
+                            {% if not content.field_strategy_overallstatus.0 == '' %}
+                            <th>{{ content.field_strategy_overallstatus['#title'] }}</th>
+                            {% endif %}
 
-        {{  content.field_redcode }}
+                            {% if not content.field_strategy_threats.0 == '' %}
+                            <th>{{ content.field_strategy_threats['#title'] }}</th>
+                            {% endif %}
+            
+                            {% if not content.field_strategy_actions.0 == '' %}
+                            <th>{{ content.field_strategy_actions['#title'] }}</th>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            {% if not content.field_strategy_overallstatus.0 == '' %}
+                            <td>{{ content.field_strategy_overallstatus.0 }}</td>
+                            {% endif %}
 
-        {{  content.field_description }}
+                            {% if not content.field_strategy_threats.0 == '' %}
+                            <td>{{ content.field_strategy_threats.0 }}</td>
+                            {% endif %}
+            
+                            {% if not content.field_strategy_actions.0 == '' %}
+                            <td>{{ content.field_strategy_actions.0 }}</td>
+                            {% endif %}
+            
+                        </tr>
+                    </table>
 
-        {{  content.field_similarspecies }}
+                    <p><a href="https://nhnm.unm.edu/sites/default/files/nonsensitive/NM_Plant_Score_Card_with_Common_Name.xlsx">Rare Plant Conservation Scorecard Summary</a></p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <hr/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="{% if node.field_county_map.0 %}col-lg-2{% endif %}">
+                    <a href="{{ file_url(node.field_county_map.0.entity.uri.value) }}" class="nmrp-img">
+                        <img src="{{ file_url(node.field_county_thumbnail.0.entity.uri.value) }}" alt="" />
+                    </a>
+                    {{ content.field_counties }}
+                </div>
+                <div class="{% if node.field_county_map.0 %}col-lg-10{% else %}col-lg-12{% endif %}">
+                    {{  content.field_description }}
+                    {{  content.field_similarspecies }}
+                    {{  content.field_distribution }}
+                    {{ content.field_habitat }}
+                    {{ content.field_remarks }}
+                    {{ content.field_conservation }}
+                    {{ content.field_important_literature }}
+                    {{ content.field_compiler }}
 
-        {{ content.field_county_thumbnail }}
+                    {# if node.field_element_subnational_id.0.value != '' #}
+                    <p><a target="_blank" href="https://nhnm.unm.edu/bcd/species/{{node.field_element_subnational_id.0.value}}">For more information, visit Natural Heritage New Mexico</a></p>
+                    {# endif #}
+                    
+                </div>
+            </div>
+        </div>
 
-        {{  content.field_distribution }}
+    </div> <!-- END CONTENT ATTRIBUTES -->
 
-        {{ content.field_habitat }}
+    <!-- IMAGE OVERLAY SCRIPT -->
+    <div id="nmrp-img-overlay"></div>
+    <script>
+        let overlay = document.getElementById('nmrp-img-overlay');
 
-        {{ content.field_remarks }}
+        // Expand images on click
+        let images = document.getElementsByClassName('nmrp-img');
+        for(let i = 0; i < images.length; i++){
+            images[i].addEventListener('click', event => {
+                event.preventDefault();
+                let img = new Image();
+                img.onload = function(){
+                    overlay.setAttribute("style", "visibility:visible; opacity: 1;")
+                };
+                img.src = event.currentTarget.href;
+                overlay.appendChild(img);
+            });
+        }
+        
+        // Remove overlay on click
+        overlay.addEventListener('click', event => {
+            overlay.setAttribute("style", "visibility:hidden; opacity: 0;");
+            while (overlay.firstChild) {
+                overlay.removeChild(overlay.firstChild);
+            }
+        });
+    </script>
+    <!-- END IMAGE OVERLAY SCRIPT -->
 
-        {{ content.field_literature }}
-
-        {{ content.field_compiler }}
 
 
 
 
 
-{#        {{ content.field_counties }}#}
+    {#
 
-{#        {{ content.field_speciesid }}#}
+    <h2>Context</h2>
+    <ol>
+        {% for key, value in _context  %}
+            <li>{{ key }}</li>
+        {% endfor %}
+    </ol>
 
-{#        {{ content.field_elcode }}#}
+    <h2>Content</h2>
+    <ol>
+        {% for key, value in content  %}
+            <li>{{ key }}</li>
+        {% endfor %}
+    </ol>
 
-{#        {{ content.field_nmrptcstatus }}#}
-
-{#        {{ content.field_srclink }}#}
-
-{#        {{ content.field_srcmap }}#}
-
-
-
-
-        <table>
-            <caption>Agency Status</caption>
-            <tr>
-                <th>USFWS</th>
-                <th>State of NM</th>
-                <th>USFS</th>
-                <th>BLM</th>
-                <th>Navajo Nation</th>
-                <th>State Conservation Rank</th>
-                <th>Global Conservation Rank</th>
-                <th>RED Code</th>
-            </tr>
-            <tr>
-                <td>{{  content.field_fedstatusinnm.0 }}</td>
-                <td>{{  content.field_agency_statestatus.0 }}</td>
-                <td>{{  content.field_agency_usfs.0 }}</td>
-                <td>{{  content.field_agency_blm.0 }}</td>
-                <td>{{  content.field_agency_navajo.0 }}</td>
-                <td>{{  content.field_agency_staterank.0 }}</td>
-                <td>{{  content.field_agency_globalrank.0 }}</td>
-                <td>{{  content.field_redcode.0 }}</td>
-            </tr>
-        </table>
-
-        <p>Rare Plant Conservation Scorecard Summary<p>
-
-        <table>
-            <caption>Conservation Status</caption>
-            <tr>
-                <th>Taxon</th>
-                <th>{{ content.field_strategy_species['#title'] }}</th>
-
-                {% if not content.field_conservation.0 == '' %}
-                <th>{{ content.field_conservation['#title'] }}</th>
-                {% endif %}
-
-                {% if not content.field_strategy_threats.0 == '' %}
-                <th>{{ content.field_strategy_threats['#title'] }}</th>
-                {% endif %}
-
-                {% if not content.field_strategy_actions.0 == '' %}
-                <th>{{ content.field_strategy_actions['#title'] }}</th>
-                {% endif %}
-            </tr>
-            <tr>
-                <td>{{ content.field_sciname.0 }}</td>
-                <td>{{ content.field_strategy_species.0 }}</td>
-
-                {% if not content.field_conservation.0 == '' %}
-                <td>{{ content.field_conservation.0 }}</td>
-                {% endif %}
-
-                {% if not content.field_strategy_threats.0 == '' %}
-                <td>{{ content.field_strategy_threats.0 }}</td>
-                {% endif %}
-
-                {% if not content.field_strategy_actions.0 == '' %}
-                <td>{{ content.field_strategy_actions.0 }}</td>
-                {% endif %}
-
-            </tr>
-        </table>
-
-    </div>
-
-        {{ content.field_county_map }}
+    <h2>Node</h2>
+    <ol>
+        {% for key, value in node  %}
+            <li>{{ key }}</li>
+        {% endfor %}
+    </ol>
+    #}
 
 </article>
 

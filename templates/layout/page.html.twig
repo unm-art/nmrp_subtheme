@@ -48,7 +48,7 @@
  * @see html.html.twig
  */
 #}
-<div id="page">
+<div id="page" {{ attributes.addClass(['page', node.bundle|clean_class,'node-id-' ~ node.id]) }}>
   <header id="masthead" class="site-header" role="banner">
     <div class="container">
       <div class="row">
