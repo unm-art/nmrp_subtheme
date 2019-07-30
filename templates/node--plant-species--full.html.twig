@@ -9,7 +9,7 @@ node--plant-species--full.html.twig
         <!-- DEFAULT IMAGE -->
         {% set defaultimg = node.field_plant_images[0] %}
         {% for key, item in node.field_plant_images %}
-            {% if (item.entity.field_image_type.value[0].target_id == 2) %}
+            {% if (node.field_plant_images[key].entity.field_image_type[0].entity.name.value == 'D') %}
                 {% set defaultimg = node.field_plant_images[key] %}
             {% endif %}
         {% endfor %}
