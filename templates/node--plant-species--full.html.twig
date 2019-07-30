@@ -164,6 +164,7 @@ node--plant-species--full.html.twig
                 img.onload = function(){
                     overlay.setAttribute("style", "visibility:visible; opacity: 1;")
                 };
+                img.setAttribute('style', 'img-responsive img-thumbnail');
                 img.src = event.currentTarget.href;
                 overlay.appendChild(img);
             });
