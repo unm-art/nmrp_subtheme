@@ -252,21 +252,37 @@ h1.node-page-title {
     height: 100%;
     background: rgba(0,0,0,0.9);
     display: flex;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    text-align: center;
     visibility: hidden;
     opacity: 0;
     transition: opacity .3s;
+    cursor: pointer;
+}
+
+#nmrp-img-overlay .closer {
+    color: #efe;
+    background: rgba(0, 0, 0, 0.8);
+    font-style: italic;
 }
 
 #nmrp-img-overlay img{
     background-color: #fff;
-    max-width: 90%;
-    max-height: 90%;
-    width: auto;
-    transform: scale(0.95);
     transition: transform .3s;
+    align-self: center;
+    flex: 0 0 auto;
+}
+
+@media screen and (min-width: 767px) {
+    #nmrp-img-overlay {
+        justify-content: center;
+        text-align: center;
+    }
+
+    #nmrp-img-overlay img{
+        transform: scale(0.95);
+    }
 }
 
 

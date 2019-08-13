@@ -153,7 +153,11 @@ node--plant-species--full.html.twig
     <!-- IMAGE OVERLAY SCRIPT -->
     <div id="nmrp-img-overlay"></div>
     <script>
-        let overlay = document.getElementById('nmrp-img-overlay');
+        let overlay = document.getElementById('nmrp-img-overlay'),
+            close = document.createElement('div');
+
+        close.textContent += "Press anywhere to close";
+        close.setAttribute('class', 'closer');
 
         // Expand images on click
         let images = document.getElementsByClassName('nmrp-img');
@@ -164,9 +168,10 @@ node--plant-species--full.html.twig
                 img.onload = function(){
                     overlay.setAttribute("style", "visibility:visible; opacity: 1;")
                 };
-                img.setAttribute('style', 'img-responsive img-thumbnail');
+                //img.setAttribute('class', 'img-responsive');
                 img.src = event.currentTarget.href;
                 overlay.appendChild(img);
+                overlay.appendChild(close);
             });
         }
         
