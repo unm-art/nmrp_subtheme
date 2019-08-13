@@ -57,62 +57,66 @@ node--plant-species--full.html.twig
                     {{  content.field_commname }}
 
                     <!-- AGENCY STATUS -->
-                    <table>
-                        <caption>Agency Status</caption>
-                        <tr>
-                            <th>USFWS</th>
-                            <th>State of NM</th>
-                            <th>USFS</th>
-                            <th>BLM</th>
-                            <th>Navajo Nation</th>
-                            <th>Heritage State Conservation Rank</th>
-                            <th>NatureServe Global Conservation Rank</th>
-                            <th>RED Code</th>
-                        </tr>
-                        <tr>
-                            <td>{{  content.field_fedstatusinnm.0 }}</td>
-                            <td>{{  content.field_agency_statestatus.0 }}</td>
-                            <td>{{  content.field_agency_usfs.0 }}</td>
-                            <td>{{  content.field_agency_blm.0 }}</td>
-                            <td>{{  content.field_agency_navajo.0 }}</td>
-                            <td>{{  content.field_agency_staterank.0 }}</td>
-                            <td>{{  content.field_agency_globalrank.0 }}</td>
-                            <td>{{  content.field_redcode.0 }}</td>
-                        </tr>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <caption>Agency Status</caption>
+                            <tr>
+                                <th>USFWS</th>
+                                <th>State of NM</th>
+                                <th>USFS</th>
+                                <th>BLM</th>
+                                <th>Navajo Nation</th>
+                                <th>Heritage State Conservation Rank</th>
+                                <th>NatureServe Global Conservation Rank</th>
+                                <th>RED Code</th>
+                            </tr>
+                            <tr>
+                                <td>{{  content.field_fedstatusinnm.0 }}</td>
+                                <td>{{  content.field_agency_statestatus.0 }}</td>
+                                <td>{{  content.field_agency_usfs.0 }}</td>
+                                <td>{{  content.field_agency_blm.0 }}</td>
+                                <td>{{  content.field_agency_navajo.0 }}</td>
+                                <td>{{  content.field_agency_staterank.0 }}</td>
+                                <td>{{  content.field_agency_globalrank.0 }}</td>
+                                <td>{{  content.field_redcode.0 }}</td>
+                            </tr>
+                        </table>
+                    </div>
 
                     <!-- CONSERVATION STATUS-->
                     {% if node.field_strategy_species.0.value == 1 %}
-                    <table>
-                        <caption>Conservation Status</caption>
-                        <tr>
-                            {% if not content.field_strategy_overallstatus.0 == '' %}
-                            <th>{{ content.field_strategy_overallstatus['#title'] }}</th>
-                            {% endif %}
+                    <div class="table-responsive">
+                        <table class="table">
+                            <caption>Conservation Status</caption>
+                            <tr>
+                                {% if not content.field_strategy_overallstatus.0 == '' %}
+                                <th>{{ content.field_strategy_overallstatus['#title'] }}</th>
+                                {% endif %}
 
-                            {% if not content.field_strategy_threats.0 == '' %}
-                            <th>{{ content.field_strategy_threats['#title'] }}</th>
-                            {% endif %}
-            
-                            {% if not content.field_strategy_actions.0 == '' %}
-                            <th>{{ content.field_strategy_actions['#title'] }}</th>
-                            {% endif %}
-                        </tr>
-                        <tr>
-                            {% if not content.field_strategy_overallstatus.0 == '' %}
-                            <td>{{ content.field_strategy_overallstatus.0 }}</td>
-                            {% endif %}
+                                {% if not content.field_strategy_threats.0 == '' %}
+                                <th>{{ content.field_strategy_threats['#title'] }}</th>
+                                {% endif %}
+                
+                                {% if not content.field_strategy_actions.0 == '' %}
+                                <th>{{ content.field_strategy_actions['#title'] }}</th>
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                {% if not content.field_strategy_overallstatus.0 == '' %}
+                                <td>{{ content.field_strategy_overallstatus.0 }}</td>
+                                {% endif %}
 
-                            {% if not content.field_strategy_threats.0 == '' %}
-                            <td>{{ content.field_strategy_threats.0 }}</td>
-                            {% endif %}
-            
-                            {% if not content.field_strategy_actions.0 == '' %}
-                            <td>{{ content.field_strategy_actions.0 }}</td>
-                            {% endif %}
-            
-                        </tr>
-                    </table>
+                                {% if not content.field_strategy_threats.0 == '' %}
+                                <td>{{ content.field_strategy_threats.0 }}</td>
+                                {% endif %}
+                
+                                {% if not content.field_strategy_actions.0 == '' %}
+                                <td>{{ content.field_strategy_actions.0 }}</td>
+                                {% endif %}
+                
+                            </tr>
+                        </table>
+                    </div>
 
                     <p><a href="https://nhnm.unm.edu/sites/default/files/nonsensitive/NM_Plant_Score_Card_with_Common_Name.xlsx">Rare Plant Conservation Scorecard Summary</a></p>
                     {% endif %}

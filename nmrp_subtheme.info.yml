@@ -8,6 +8,18 @@ base theme: nexus
 libraries:
   - nmrp_subtheme/global-styling
 
+libraries-override:
+  nexus/global-css: 
+    css:
+      theme:
+        assets/css/bootstrap.min.css: assets/css/bootstrap.min.css
+        assets/css/style.css: assets/css/style.css
+
+  nexus/global-js:
+    js:
+      assets/js/bootstrap.min.js : assets/js/bootstrap.min.js
+
+
 # Regions (must match base theme)
 regions:
   header: 'Header'
