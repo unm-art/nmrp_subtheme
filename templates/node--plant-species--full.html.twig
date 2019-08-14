@@ -7,6 +7,8 @@ Tips:
 {{ dump(_context|keys) }}
 #}
 
+{{ attach_library('nmrp_subtheme/taxon-scripts') }}
+
 <article{{ attributes }}>
 
     <div{{ content_attributes }}>
@@ -32,7 +34,8 @@ Tips:
                         }
                     %}
                     <li id="thumb_img_{{ key }}">
-                        <a href="{{ file_url(node.field_plant_images[key].entity.field_media_image[0].entity.uri.value) }}" class="nmrp-img">
+                        <a href="{{ file_url(node.field_plant_images[key].entity.field_media_image[0].entity.uri.value) }}" class="nmrp-img" data-copyright='{% if node.field_plant_images[key].entity.field_copyright_date.value != null %}{{ node.field_plant_images[key].entity.field_copyright_date.value|date("Y") }}{% endif %}' 
+                           data-photographer="{% if node.field_plant_images[key].entity.field_photographer.value != null %}{{ node.field_plant_images[key].entity.field_photographer.value }}{% endif %}">
                             {{ imagestyle }}
                         </a>
                     </li>
@@ -48,7 +51,9 @@ Tips:
                 <div class="{% if defaultimg %}col-lg-5{% endif %}">
                     <!-- PRIMARY PHOTO -->
                     <figure>
-                        <a href="{{ file_url(defaultimg.entity.field_media_image[0].entity.uri.value) }}" class="nmrp-img">
+                        <a href="{{ file_url(defaultimg.entity.field_media_image[0].entity.uri.value) }}" class="nmrp-img" 
+                           data-copyright='{% if defaultimg.entity.field_copyright_date.value != null %}{{ defaultimg.entity.field_copyright_date.value|date("Y") }}{% endif %}' 
+                           data-photographer="{% if defaultimg.entity.field_photographer.value != null %}{{ defaultimg.entity.field_photographer.value }}{% endif %}">
                         {{ {
                             '#theme':      'image_style',
                             '#style_name': 'nmrp_large',
@@ -177,44 +182,19 @@ Tips:
 
     </div> <!-- END CONTENT ATTRIBUTES -->
 
-    <!-- IMAGE OVERLAY SCRIPT -->
-    <div id="nmrp-img-overlay"></div>
-    <script>
-        let overlay = document.getElementById('nmrp-img-overlay'),
-            close = document.createElement('div');
-
-        close.textContent += "Press anywhere to close";
-        close.setAttribute('class', 'closer');
-
-        // Expand images on click
-        let images = document.getElementsByClassName('nmrp-img');
-        for(let i = 0; i < images.length; i++){
-            images[i].addEventListener('click', event => {
-                event.preventDefault();
-                let img = new Image();
-                img.onload = function(){
-                    overlay.setAttribute("style", "visibility:visible; opacity: 1;")
-                };
-                //img.setAttribute('class', 'img-responsive');
-                img.src = event.currentTarget.href;
-                overlay.appendChild(img);
-                overlay.appendChild(close);
-            });
-        }
-        
-        // Remove overlay on click
-        overlay.addEventListener('click', event => {
-            overlay.setAttribute("style", "visibility:hidden; opacity: 0;");
-            while (overlay.firstChild) {
-                overlay.removeChild(overlay.firstChild);
-            }
-        });
-    </script>
-    <!-- END IMAGE OVERLAY SCRIPT -->
-
-
-
-
+    <!-- IMAGE OVERLAY MODAL -->
+    <div id="nmrp-img-overlay" class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+    <!-- END IMAGE OVERLAY MODAL -->
 
 
     {#

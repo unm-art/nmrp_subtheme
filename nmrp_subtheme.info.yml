@@ -7,6 +7,7 @@ base theme: nexus
 # Add css/js.
 libraries:
   - nmrp_subtheme/global-styling
+  - nmrp_subtheme/global-scripts
 
 libraries-override:
   nexus/global-css: 
@@ -14,7 +15,6 @@ libraries-override:
       theme:
         assets/css/bootstrap.min.css: assets/css/bootstrap.min.css
         assets/css/style.css: assets/css/style.css
-
   nexus/global-js:
     js:
       assets/js/bootstrap.min.js : assets/js/bootstrap.min.js

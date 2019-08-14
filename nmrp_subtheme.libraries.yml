@@ -2,5 +2,15 @@ global-styling:
   css:
     theme:
       assets/css/custom.css: {}
+
+global-scripts:
   js:
     assets/js/custom.js: {}
+  dependencies:
+    - core/jquery
+
+taxon-scripts:
+  js:
+    assets/js/taxon.js: {}
+  dependencies:
+    - core/jquery
