@@ -1,5 +1,10 @@
 {#
 node--plant-species--full.html.twig
+
+Tips:
+{{ dump() }}
+{{ dump(variable_name) }}
+{{ dump(_context|keys) }}
 #}
 
 <article{{ attributes }}>
@@ -61,24 +66,28 @@ node--plant-species--full.html.twig
                         <table class="table">
                             <caption>Agency Status</caption>
                             <tr>
-                                <th>USFWS</th>
-                                <th>State of NM</th>
-                                <th>USFS</th>
-                                <th>BLM</th>
+                                <th data-toggle="tooltip" title="" data-original-title="U.S. Fish and Wildlife Service (USFWS)" data-container="body">USFWS</th>
+                                <th data-toggle="tooltip" title="" data-original-title="State of New Mexico (NM)" data-container="body">State of NM</th>
+                                <th data-toggle="tooltip" title="" data-original-title="U.S. Forest Service (USFS)" data-container="body">USFS</th>
+                                <th data-toggle="tooltip" title="" data-original-title="Bureau of Land Management (BLM)" data-container="body">BLM</th>
                                 <th>Navajo Nation</th>
-                                <th>Heritage State Conservation Rank</th>
-                                <th>NatureServe Global Conservation Rank</th>
-                                <th>RED Code</th>
+                                <th data-toggle="tooltip" title="" data-original-title="Heritage State Conservation Rank" data-container="body">State Rank</th>
+                                <th data-toggle="tooltip" title="" data-original-title="NatureServe Global Conservation Rank" data-container="body">Global Rank</th>
+                                <th data-toggle="tooltip" title="" data-original-title="Rarity-Endangerment-Distribution:<br>1 (least), 2, or 3 (most)" data-container="body" data-html="true">R-E-D Code</th>
+                                <th data-toggle="tooltip" title="" data-original-title="New Mexico Rare Plant Technical Council (NMRPTC)" data-container="body">NMRPTC Status</th>
+                                <th>Strategy Status</th>
                             </tr>
                             <tr>
-                                <td>{{  content.field_fedstatusinnm.0 }}</td>
-                                <td>{{  content.field_agency_statestatus.0 }}</td>
-                                <td>{{  content.field_agency_usfs.0 }}</td>
-                                <td>{{  content.field_agency_blm.0 }}</td>
-                                <td>{{  content.field_agency_navajo.0 }}</td>
-                                <td>{{  content.field_agency_staterank.0 }}</td>
-                                <td>{{  content.field_agency_globalrank.0 }}</td>
-                                <td>{{  content.field_redcode.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_fedstatusinnm[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_fedstatusinnm.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_agency_statestatus[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_agency_statestatus.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_agency_usfs[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_agency_usfs.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_agency_blm[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_agency_blm.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_agency_navajo[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_agency_navajo.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_agency_staterank[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_agency_staterank.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_agency_globalrank[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_agency_globalrank.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_redcode[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_redcode.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_nmrptcstatus[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_nmrptcstatus.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_strategy_status[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_strategy_status.0 }}</td>
                             </tr>
                         </table>
                     </div>

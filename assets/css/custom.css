@@ -116,6 +116,12 @@ caption {
 }
 
 
+/* Tooltips
+-------------------------------------------------- */
+.tooltip > .tooltip-inner { padding: 10px; }
+.tooltip > .tooltip-inner p:last-child { margin: 0; }
+
+
 /*===========================================*
 /* Content
 /*===========================================*/
