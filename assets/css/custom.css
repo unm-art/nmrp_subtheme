@@ -27,6 +27,17 @@ h4 { font-size: 20px; }
 h5 { font-size: 18px; }
 h6 { font-size: 16px; } */
 
+
+/* Images
+-------------------------------------------------- */
+
+figure { margin-bottom: 20px; }
+figcaption {
+    font-size: smaller;
+    font-style: italic;
+}
+
+
 /* Forms
 -------------------------------------------------- */
 

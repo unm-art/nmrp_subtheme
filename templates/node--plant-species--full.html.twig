@@ -46,14 +46,28 @@ Tips:
         <div class="container-fluid">
             <div class="row">
                 <div class="{% if defaultimg %}col-lg-5{% endif %}">
-                    <a href="{{ file_url(defaultimg.entity.field_media_image[0].entity.uri.value) }}" class="nmrp-img">
-                    {{ {
-                        '#theme':      'image_style',
-                        '#style_name': 'nmrp_large',
-                        '#attributes': { class: 'img-responsive img-thumbnail' },
-                        '#uri':        defaultimg.entity.field_media_image[0].entity.uri.value,
-                        } }}
-                    </a>
+                    <!-- PRIMARY PHOTO -->
+                    <figure>
+                        <a href="{{ file_url(defaultimg.entity.field_media_image[0].entity.uri.value) }}" class="nmrp-img">
+                        {{ {
+                            '#theme':      'image_style',
+                            '#style_name': 'nmrp_large',
+                            '#attributes': { class: 'img-responsive img-thumbnail' },
+                            '#uri':        defaultimg.entity.field_media_image[0].entity.uri.value,
+                            } }}
+                        </a>
+                        <figcaption>
+                            {% if defaultimg.entity.field_photographer.value != null %}
+                            Photograph by <cite>{{ defaultimg.entity.field_photographer.value }}</cite>
+                            {% endif %}
+                        
+                            {% if defaultimg.entity.field_copyright_date.value != null %}
+                            ({{ defaultimg.entity.field_copyright_date.value|date("Y") }})
+                            {% endif %}
+                        </figcaption>
+                    </figure>
+
+                    
                 </div>
                 <div class="{% if defaultimg %}col-lg-7{% else %}col-lg-12{% endif %}">
                     {{  content.field_family }}
