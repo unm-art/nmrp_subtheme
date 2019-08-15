@@ -163,6 +163,9 @@ th {
   font-weight: bold;
   padding:10px 10px;
 }
+th a, th a:visited {
+  color: #fff;
+}
 
 tr{
   padding:5px 5px;
