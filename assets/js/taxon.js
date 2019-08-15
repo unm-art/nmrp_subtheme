@@ -22,22 +22,25 @@
     for(let i = 0; i < images.length; i++){
         images[i].addEventListener('click', event => {
             event.preventDefault();
-            let curr_element = event.currentTarget;
-            let img = new Image(),
-                caption = document.createElement('p');
+            let curr_element = event.currentTarget,
+                img = new Image(),
+                caption = document.createElement('p'),
+                photographer = curr_element.hasAttribute('data-photographer') ? curr_element.getAttribute('data-photographer') : "",
+                copyright = curr_element.hasAttribute('data-copyright') ? curr_element.getAttribute('data-copyright') : "";
+
             img.onload = function(){
                 $('#nmrp-img-overlay').modal('show');
             };
             img.src = curr_element.href;
             modal_body.appendChild(img);
-            caption.textContent += curr_element.getAttribute('data-photographer') + " " + curr_element.getAttribute('data-copyright');
+            caption.textContent += photographer + " " + copyright;
             modal_footer.appendChild(caption);
         });
     }
 
     // Remove overlay on click
-    overlay.addEventListener('click', event => {
-        // overlay.setAttribute("style", "visibility:hidden; opacity: 0;");
+    $('#nmrp-img-overlay').on('click', function(){
+        $(this).modal('hide');
         while (modal_body.firstChild) {
             modal_body.removeChild(modal_body.firstChild);
         }
