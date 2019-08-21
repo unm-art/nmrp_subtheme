@@ -9,7 +9,10 @@ global-scripts:
   dependencies:
     - core/jquery
 
-taxon-scripts:
+taxon:
+  css:
+    theme:
+      assets/css/taxon.css: {}
   js:
     assets/js/taxon.js: {}
   dependencies:
