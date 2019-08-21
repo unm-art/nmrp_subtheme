@@ -1,0 +1,122 @@
+{#
+node--plant-species--teaser.html.twig
+
+Tips:
+{{ dump() }}
+{{ dump(variable_name) }}
+{{ dump(_context|keys) }}
+#}
+
+{{ attach_library('nmrp_subtheme/taxon') }}
+
+<article{{ attributes }}>
+
+    <div{{ content_attributes }}>
+
+        <!-- DEFAULT IMAGE -->
+        {% set defaultimg = node.field_plant_images[0] %}
+        {% for key, item in node.field_plant_images %}
+            {% if (node.field_plant_images[key].entity.field_image_type[0].entity.name.value == 'D') %}
+                {% set defaultimg = node.field_plant_images[key] %}
+            {% endif %}
+        {% endfor %}
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="{% if defaultimg %}col-lg-2{% endif %}">
+                    <!-- PRIMARY PHOTO -->
+                    <figure>
+                        <a href="/node/{{ node.nid.0.value }}">
+                        {{ {
+                            '#theme':      'image_style',
+                            '#style_name': 'nmrp_thumbnail',
+                            '#attributes': { class: 'img-responsive img-thumbnail' },
+                            '#uri':        defaultimg.entity.field_media_image[0].entity.uri.value,
+                            } }}
+                        </a>
+                        <figcaption>
+                            {% if defaultimg.entity.field_photographer.value != null %}
+                            <cite>{{ defaultimg.entity.field_photographer.value }}</cite>
+                            {% endif %}
+                        
+                            {% if defaultimg.entity.field_copyright_date.value != null %}
+                            ({{ defaultimg.entity.field_copyright_date.value|date("Y") }})
+                            {% endif %}
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="{% if defaultimg %}col-lg-10{% else %}col-lg-12{% endif %}">
+                    <h2 class="node-page-title">
+                        <a href="/node/{{ node.nid.0.value }}">{{ node.title.0.value }}</a>
+                    </h2>
+
+                    <p>{{  node.field_description.0.value|length > 250 ? node.field_description.0.value|slice(0, 250) ~ '...' : node.field_description.0.value }}</p>
+
+                    <!-- AGENCY STATUS -->
+                    <div class="table-responsive">
+                        <table class="table">
+                            <caption>Agency Status</caption>
+                            <tr>
+                                <th data-toggle="tooltip" title="" data-original-title="U.S. Fish and Wildlife Service (USFWS)" data-container="body">USFWS</th>
+                                <th data-toggle="tooltip" title="" data-original-title="State of New Mexico (NM)" data-container="body">State of NM</th>
+                                <th data-toggle="tooltip" title="" data-original-title="U.S. Forest Service (USFS)" data-container="body">USFS</th>
+                                <th data-toggle="tooltip" title="" data-original-title="Bureau of Land Management (BLM)" data-container="body">BLM</th>
+                                <th>Navajo Nation</th>
+                                <th data-toggle="tooltip" title="" data-original-title="Heritage State Conservation Rank" data-container="body">State Rank</th>
+                                <th data-toggle="tooltip" title="" data-original-title="NatureServe Global Conservation Rank" data-container="body">Global Rank</th>
+                                <th data-toggle="tooltip" title="" data-original-title="Rarity-Endangerment-Distribution:<br>1 (least), 2, or 3 (most)" data-container="body" data-html="true">R-E-D Code</th>
+                                <th data-toggle="tooltip" title="" data-original-title="New Mexico Rare Plant Technical Council (NMRPTC)" data-container="body">NMRPTC Status</th>
+                                <th>Strategy Status</th>
+                            </tr>
+                            <tr>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_fedstatusinnm[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_fedstatusinnm.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_agency_statestatus[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_agency_statestatus.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_agency_usfs[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_agency_usfs.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_agency_blm[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_agency_blm.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_agency_navajo[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_agency_navajo.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_agency_staterank[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_agency_staterank.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_agency_globalrank[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_agency_globalrank.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_redcode[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_redcode.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_nmrptcstatus[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_nmrptcstatus.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_strategy_status[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_strategy_status.0 }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <hr/>
+                </div>
+            </div>
+            
+        </div>
+
+    </div> <!-- END CONTENT ATTRIBUTES -->
+
+
+
+    {#
+    <h2>Context</h2>
+    <ol>
+        {% for key, value in _context  %}
+            <li>{{ key }}</li>
+        {% endfor %}
+    </ol>
+
+    <h2>Content</h2>
+    <ol>
+        {% for key, value in content  %}
+            <li>{{ key }}</li>
+        {% endfor %}
+    </ol>
+
+    <h2>Node</h2>
+    <ol>
+        {% for key, value in node  %}
+            <li>{{ key }}</li>
+        {% endfor %}
+    </ol>
+    #}
+
+</article>
