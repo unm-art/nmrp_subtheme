@@ -16,7 +16,7 @@ Tips:
         <!-- DEFAULT IMAGE -->
         {% set defaultimg = node.field_plant_images[0] %}
         {% for key, item in node.field_plant_images %}
-            {% if (node.field_plant_images[key].entity.field_image_type[0].entity.name.value == 'D') %}
+            {% if (node.field_plant_images[key].entity.field_primary_photo[0].value == '1') %}
                 {% set defaultimg = node.field_plant_images[key] %}
             {% endif %}
         {% endfor %}
