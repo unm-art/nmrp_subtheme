@@ -106,13 +106,13 @@ Tips:
                                 <td data-toggle="tooltip" title="" data-original-title="{{ node.field_agency_globalrank[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_agency_globalrank.0 }}</td>
                                 <td data-toggle="tooltip" title="" data-original-title="{{ node.field_redcode[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_redcode.0 }}</td>
                                 <td data-toggle="tooltip" title="" data-original-title="{{ node.field_nmrptcstatus[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_nmrptcstatus.0 }}</td>
-                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_strategy_status[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_strategy_status.0 }}</td>
+                                <td data-toggle="tooltip" title="" data-original-title="{{ node.field_strategy_species[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_strategy_species.0 }}</td>
                             </tr>
                         </table>
                     </div>
 
                     <!-- CONSERVATION STATUS-->
-                    {% if node.field_strategy_species.0.value == 1 %}
+                    {% if node.field_strategy_species.0.entity.name.value == 'SS' %}
                     <div class="table-responsive">
                         <table class="table">
                             <caption>Conservation Status</caption>
