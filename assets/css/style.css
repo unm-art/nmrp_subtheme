@@ -958,8 +958,8 @@ div.vertical-tabs .vertical-tabs-panes fieldset.vertical-tabs-pane { padding: 1e
 
 /* Form Buttons */
 
-button,
-a[role="button"],
+form button,
+form a[role="button"],
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
@@ -978,8 +978,8 @@ input[type="button"] {
   text-shadow: 0 1px 0 #00000029;
 }
 
-button:hover,
-a[role="button"]:hover,
+form button:hover,
+form a[role="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
@@ -998,8 +998,8 @@ input[type="button"]:hover {
   text-shadow: 0 1px 0 #00000029;
 }
 
-button.full-width,
-a[role=button].full-width,
+form button.full-width,
+form a[role=button].full-width,
 input[type="submit"].full-width,
 input[type="reset"].full-width,
 input[type="button"].full-width {
