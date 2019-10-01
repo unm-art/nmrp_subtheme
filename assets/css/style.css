@@ -1085,16 +1085,32 @@ ol.search-results { padding-left: 0; }
 /*-------------------------------------------*
 /* Advanced Search Form
 /*-------------------------------------------*/
-form#search-form {
+/* form#search-form {
+
+} */
+
+#search-input-container {
   display: flex;
   flex-flow: row wrap;
 }
 
-form#search-form .form-item.js-form-type-select label {
-  display: block;
+#search-input-container > * {
+  flex: 1 1 30%;
 }
 
-form#search-form #namebox div label { display: none; }
+#search-input-container #namebox {
+  display: flex;
+  flex: 0 1 100%;
+  flex-flow: row wrap;
+}
+
+#search-input-container #namebox > * {
+  flex: 1 0 45%;
+}
+
+#search-input-container .form-item.js-form-type-select label {
+  display: block;
+}
 
 form#search-form select#strategyspecies,
 form#search-form select#nonstrategyspecies,
@@ -1137,6 +1153,8 @@ form#search-form fieldset .form-item select {
 
 form#search-form #conservationranks .fieldset-wrapper {
   display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
 }
 
 form#search-form #conservationranks legend {
@@ -1147,17 +1165,12 @@ form#search-form #strategyoverallstatus {
   height: 100px;
 }
 
-form#search-form #namebox {
-  display: flex;
-  flex: 0 1 100%;
-  flex-flow: row wrap;
-}
-
 form#search-form .form-actions {
   flex: 0 1 100%;
 }
 
-form#search-form a#resetbutton {
+form#search-form a#resetbutton,
+form#search-form a#modsearch {
   font-size: 16px;
   line-height: 19px;
   min-height: 37px;
@@ -1167,6 +1180,8 @@ form#search-form a#resetbutton {
   margin-left: .2em;
   text-decoration: none;
   position: relative;
+  text-align: center;
+  display: inline-block;
 }
 
 form#search-form div#responsive {
