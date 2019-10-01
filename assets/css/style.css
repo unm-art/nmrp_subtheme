@@ -1025,7 +1025,13 @@ ol.search-results { padding-left: 0; }
 
 .search-results .search-snippet-info { padding-left: 0; }
 
-/* Simple Search */
+
+/*-------------------------------------------*
+/* Simple Search
+/*-------------------------------------------*/
+#simple-search {
+  margin-bottom: 2em;
+}
 #searchbox { display: flex; }
 #searchbox div { margin: 0; }
 #searchbox label { display: none; }
