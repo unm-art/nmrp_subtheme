@@ -1538,7 +1538,7 @@ border-left: 1px solid; border-right: 1px solid; height: 40px; margin-left: -36p
   }
   .flex-direction-nav .flex-prev,
   .flex-direction-nav .flex-next {
-    z-index: 1000;
+    z-index: 500;
   }
   .flex-direction-nav .flex-prev:hover,
   .flex-direction-nav .flex-next:hover {
@@ -1641,6 +1641,19 @@ border-left: 1px solid; border-right: 1px solid; height: 40px; margin-left: -36p
 }
 .slicknav_menu {
   display: none;
+}
+
+.slicknav_menu a {
+  color: #fff;
+}
+
+.slicknav_nav a:hover,
+.slicknav_nav a.is-active {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background: #ccc;
+  color: #222
 }
 
 @media screen and (max-width: 768px) {
