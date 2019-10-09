@@ -1091,42 +1091,39 @@ ol.search-results { padding-left: 0; }
 /*-------------------------------------------*
 /* Advanced Search Form
 /*-------------------------------------------*/
-/* form#search-form {
 
-} */
+@media screen and (min-width: 640px) {
+  #search-input-container {
+    display: flex;
+    flex-flow: row wrap;
+  }
 
-#search-input-container {
-  display: flex;
-  flex-flow: row wrap;
+  #search-input-container > * {
+    flex: 1 1 45%;
+  }
 }
 
-#search-input-container > * {
-  flex: 1 1 30%;
+@media screen and (min-width: 940px) {
+  #search-input-container > * {
+    flex: 1 1 30%;
+  }
 }
 
-#search-input-container #namebox {
-  display: flex;
-  flex: 0 1 100%;
-  flex-flow: row wrap;
+#search-form label {
+  font-size: 1.1em;
 }
 
-#search-input-container #namebox > * {
-  flex: 1 0 45%;
+form#search-form .form-item {
+  padding: 10px;
 }
 
 #search-input-container .form-item.js-form-type-select label {
   display: block;
 }
 
-form#search-form select#strategyspecies,
-form#search-form select#nonstrategyspecies,
-form#search-form select#counties {
-  height: 200px;
-  width: 300px;
-}
-
-form#search-form .form-item {
-  padding: 10px;
+form#search-form input.form-text {
+  width: 100%;
+  display: block;
 }
 
 form#search-form fieldset {
@@ -1152,11 +1149,37 @@ form#search-form .form-checkboxes .form-item {
   padding: 0;
 }
 
-form#search-form fieldset .form-item select {
-  height: 150px;
-  width: 100px;
+/* scientific/common names */
+#search-input-container #namebox {
+  display: flex;
+  flex: 0 1 100%;
+  flex-flow: row wrap;
 }
 
+@media screen and (min-width: 940px) {
+  #search-input-container #namebox > * {
+    flex: 1 0 45%;
+  }
+}
+
+/* select boxes */
+form#search-form #strategyspecies,
+form#search-form #nonstrategyspecies,
+form#search-form #counties {
+  height: auto;
+  width: 300px;
+  max-width: 100%;
+}
+
+@media screen and (min-width: 920px) {
+  form#search-form #strategyspecies,
+  form#search-form #nonstrategyspecies,
+  form#search-form #counties {
+    height: 200px;
+  }
+}
+
+/* conservation ranks */
 form#search-form #conservationranks .fieldset-wrapper {
   display: flex;
   justify-content: space-around;
@@ -1167,8 +1190,13 @@ form#search-form #conservationranks legend {
   text-align: center;
 }
 
+form#search-form #conservationranks select {
+  height: auto;
+  width: 100px;
+}
+
 form#search-form #strategyoverallstatus {
-  height: 100px;
+  height:auto;
 }
 
 form#search-form .form-actions {
@@ -1193,6 +1221,16 @@ form#search-form a#modsearch {
 form#search-form div#responsive {
   padding: 0;
   margin: 0;
+}
+
+@media screen and (min-width: 920px) {
+  form#search-form #conservationranks select {
+    height: 150px;
+  }
+
+  form#search-form #strategyoverallstatus {
+    height: 100px;
+  }
 }
 
 
