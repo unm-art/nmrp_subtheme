@@ -1036,6 +1036,8 @@ ol.search-results { padding-left: 0; }
 #searchbox div { margin: 0; }
 #searchbox label { display: none; }
 #searchbox #simplesearch {
+  display: block;
+  width: 100%;
   font-size: 16px;
   height: 36px;
   margin: 0;
