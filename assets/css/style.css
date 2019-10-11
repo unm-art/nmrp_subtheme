@@ -646,10 +646,10 @@ a.frmore{
 /* Hero Area / Preface Area
 /*-------------------------------------------*/
 #preface-area {
-  background: none repeat scroll 0 0 #ED564B;
-  border-bottom: 5px solid #F96B61;
-  border-top: 5px solid #F96B61;
-  padding: 40px 0 20px;
+  background: none repeat scroll 0 0 #588C63;
+  border-bottom: 5px solid #fff;
+  border-top: 5px solid #619a6d;
+  padding: 40px 0;
 }
 
 #preface-area #nmrp-site-header {
@@ -659,18 +659,18 @@ a.frmore{
 
 .preface-block{
   color: #fff;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 
 .preface-block .block > h2{
   font-size: 24px;
   font-weight: bold;
 }
 
-#preface-area { background: #588C63; display: none; }
 @media screen and (min-width: 768px) {
-    #preface-area {
+    body:not(.path-frontpage) #preface-area {
         /* background: #588C63 url(/themes/custom/nmrp_subtheme/assets/images/header-img.png) no-repeat scroll 50% 0 ; */
         background-size: 100% 100%;
         background-image: url(/themes/custom/nmrp_subtheme/assets/images/header-img.png);
@@ -1036,6 +1036,8 @@ ol.search-results { padding-left: 0; }
 #searchbox div { margin: 0; }
 #searchbox label { display: none; }
 #searchbox #simplesearch {
+  background-color: #fff;
+  color: #333;
   display: block;
   width: 100%;
   font-size: 16px;
