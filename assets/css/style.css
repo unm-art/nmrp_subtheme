@@ -669,10 +669,9 @@ a.frmore{
   font-weight: bold;
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 360px) {
     body:not(.path-frontpage) #preface-area {
-        /* background: #588C63 url(/themes/custom/nmrp_subtheme/assets/images/header-img.png) no-repeat scroll 50% 0 ; */
-        background-size: 100% 100%;
+        background-size: cover;
         background-image: url(/themes/custom/nmrp_subtheme/assets/images/header-img.png);
         background-repeat: no-repeat;
         border-bottom: 5px solid #FFFFFF;
