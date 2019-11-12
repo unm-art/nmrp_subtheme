@@ -167,6 +167,18 @@ ul ul, ol ol, ul ol, ol ul {
   margin-bottom: 0;
 }
 
+b,strong {
+  font-weight: 700
+}
+
+i {
+  font-style: italic;
+}
+
+u {
+  text-decoration: underline;
+}
+
 
 /*-------------------------------------------*
 /* Fields
