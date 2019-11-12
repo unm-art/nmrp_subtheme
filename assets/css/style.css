@@ -892,7 +892,7 @@ border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
 /* Comment Form
 /*-------------------------------------------*/
 
-.comment-form label { float: left; font-size: 0.929em; }
+.comment-form label { font-size: 0.929em; }
 
 .comment-form input, .comment-form .form-select { margin: 0;
 -khtml-border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
@@ -958,10 +958,11 @@ div.vertical-tabs .vertical-tabs-panes fieldset.vertical-tabs-pane { padding: 1e
 /* Form Buttons */
 
 form button,
-form a[role="button"],
 input[type="submit"],
 input[type="reset"],
-input[type="button"] {
+input[type="button"],
+#resetbutton,
+#modsearch {
   background-color: #588C63;
   border: 0px;
   color: #FFFFFF;
@@ -978,10 +979,11 @@ input[type="button"] {
 }
 
 form button:hover,
-form a[role="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
-input[type="button"]:hover {
+input[type="button"]:hover,
+#resetbutton:hover,
+#modsearc:hover {
   background-color: #88BC93;
   border: 0px;
   color: #FFFFFF;
