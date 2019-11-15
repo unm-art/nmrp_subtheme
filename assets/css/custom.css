@@ -1,0 +1,9 @@
+
+
+/* 
+ * Flexslider Adjustments
+ * * * * * * * * * * * * * */
+
+ /* enable focus styles for keyboard navigation */
+.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover,
+.flexslider .flex-next:focus, .flexslider .flex-prev:focus {background-position-y: -100px;}
