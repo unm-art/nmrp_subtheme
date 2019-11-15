@@ -15,9 +15,13 @@ libraries-override:
       theme:
         assets/css/bootstrap.min.css: assets/css/bootstrap.min.css
         assets/css/style.css: assets/css/style.css
+        assets/css/flexslider.css: assets/css/flexslider.css
   nexus/global-js:
     js:
       assets/js/bootstrap.min.js : assets/js/bootstrap.min.js
+  nexus/slider-js:
+    js:
+      assets/js/slide.js : assets/js/slide.js
 
 
 # Regions (must match base theme)
