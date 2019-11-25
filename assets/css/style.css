@@ -992,7 +992,7 @@ input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover,
 #resetbutton:hover,
-#modsearc:hover {
+#modsearch:hover {
   background-color: #88BC93;
   border: 0px;
   color: #FFFFFF;
@@ -1567,10 +1567,6 @@ border-left: 1px solid; border-right: 1px solid; height: 40px; margin-left: -36p
 
   h1#site-title{
     text-align: center;
-  }
-
-  #site-logo {
-    padding-top: 0;
   }
 
   select.mnav{
