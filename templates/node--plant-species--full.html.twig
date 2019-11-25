@@ -156,13 +156,27 @@ Tips:
                 </div>
             </div>
             <div class="row">
-                <div class="{% if node.field_county_map.0 %}col-lg-2{% endif %}">
-                    <a href="{{ file_url(node.field_county_map.0.entity.uri.value) }}" class="nmrp-img">
-                        <img src="{{ file_url(node.field_county_thumbnail.0.entity.uri.value) }}" alt="" />
+                <div class="{% if node.field_county_thumbnail.0 or content.field_counties.0 %}col-lg-2{% endif %}">
+
+                    <!-- COUNTY THUMBNAIL -->
+                    {% if node.field_county_thumbnail.0 %}
+                    {% set map_link = node.field_county_map.0 ? file_url(node.field_county_map.0.entity.uri.value) : '#' %}
+                    <a href="{{ map_link }}" class="nmrp-img">
+                        <img src="{{ file_url(node.field_county_thumbnail.0.entity.uri.value) }}" alt="County Map" />
                     </a>
-                    {{ content.field_counties }}
+                    {% endif %}
+
+                    <!-- COUNTY LIST -->
+                    {% if content.field_counties[0] %}
+                    <strong>{{ node.field_counties.fieldDefinition.label }}</strong>
+                    <ul>
+                    {% for key, item in content.field_counties if key|first != '#' %}
+                        <li><a href="{{ content.field_counties[key]['#url'] }}">{{ content.field_counties[key]['#title'] }}</a></li>
+                    {% endfor %}
+                    </ul>
+                    {% endif %}
                 </div>
-                <div class="{% if node.field_county_map.0 %}col-lg-10{% else %}col-lg-12{% endif %}">
+                <div class="{% if node.field_county_thumbnail.0 or content.field_counties.0 %}col-lg-10{% else %}col-lg-12{% endif %}">
                     {{  content.field_description }}
                     {{  content.field_similarspecies }}
                     {{  content.field_distribution }}
