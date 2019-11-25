@@ -75,7 +75,13 @@ Tips:
                     
                 </div>
                 <div class="{% if defaultimg %}col-lg-7{% else %}col-lg-12{% endif %}">
-                    {{  content.field_family }}
+                    
+                    <!-- FAMILY -->
+                    <div class="field field--label-inline field--name-field-family">
+                        <div class="field__label">{{ node.field_family.fieldDefinition.label }}</div>
+                        <div class="field__item">{{  node.field_family.0.entity.name.value }}</div>
+                    </div>
+
                     {{  content.field_scinamewithauthor }}
                     {{  content.field_synonyms }}
                     {{  content.field_commname }}
