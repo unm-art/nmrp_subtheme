@@ -174,13 +174,18 @@ Tips:
 
                     <!-- COUNTY LIST -->
                     {% if content.field_counties[0] %}
-                    <strong>{{ node.field_counties.fieldDefinition.label }}</strong>
-                    <ul>
-                    {% for key, item in content.field_counties if key|first != '#' %}
-                        <li><a href="{{ content.field_counties[key]['#url'] }}">{{ content.field_counties[key]['#title'] }}</a></li>
-                    {% endfor %}
-                    </ul>
+                    <div class="field field--name-field-counties">
+                        <div class="field__label">{{ node.field_counties.fieldDefinition.label }}</div>
+                        <div class="field__item">
+                            <ul>
+                            {% for key, item in content.field_counties if key|first != '#' %}
+                                <li><a href="{{ content.field_counties[key]['#url'] }}">{{ content.field_counties[key]['#title'] }}</a></li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
                     {% endif %}
+
                 </div>
                 <div class="{% if node.field_county_thumbnail.0 or content.field_counties.0 %}col-lg-10{% else %}col-lg-12{% endif %}">
                     {{  content.field_description }}
