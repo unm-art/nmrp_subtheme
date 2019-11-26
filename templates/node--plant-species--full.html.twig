@@ -87,20 +87,21 @@ Tips:
                     {{  content.field_commname }}
 
                     <!-- AGENCY STATUS -->
+                    {% set as_link = "/about" %}
                     <div class="table-responsive">
                         <table class="table">
-                            <caption>Agency Status</caption>
+                            <caption><a href="{{ as_link }}">Agency Status</a></caption>
                             <tr>
-                                <th data-toggle="tooltip" title="" data-original-title="U.S. Fish and Wildlife Service (USFWS)" data-container="body">USFWS</th>
-                                <th data-toggle="tooltip" title="" data-original-title="State of New Mexico (NM)" data-container="body">State of NM</th>
-                                <th data-toggle="tooltip" title="" data-original-title="U.S. Forest Service (USFS)" data-container="body">USFS</th>
-                                <th data-toggle="tooltip" title="" data-original-title="Bureau of Land Management (BLM)" data-container="body">BLM</th>
-                                <th>Navajo Nation</th>
-                                <th data-toggle="tooltip" title="" data-original-title="Heritage State Conservation Rank" data-container="body">State Rank</th>
-                                <th data-toggle="tooltip" title="" data-original-title="NatureServe Global Conservation Rank" data-container="body">Global Rank</th>
-                                <th data-toggle="tooltip" title="" data-original-title="Rarity-Endangerment-Distribution:<br>1 (least), 2, or 3 (most)" data-container="body" data-html="true">R-E-D Code</th>
-                                <th data-toggle="tooltip" title="" data-original-title="New Mexico Rare Plant Technical Council (NMRPTC)" data-container="body">NMRPTC Status</th>
-                                <th>Strategy Status</th>
+                                <th data-toggle="tooltip" title="" data-original-title="U.S. Fish and Wildlife Service (USFWS)" data-container="body"><a href="{{ as_link }}#usfws">USFWS</a></th>
+                                <th data-toggle="tooltip" title="" data-original-title="State of New Mexico (NM)" data-container="body"><a href="{{ as_link }}#state-of-nm">State of NM</a></th>
+                                <th data-toggle="tooltip" title="" data-original-title="U.S. Forest Service (USFS)" data-container="body"><a href="{{ as_link }}#usfs">USFS</a></th>
+                                <th data-toggle="tooltip" title="" data-original-title="Bureau of Land Management (BLM)" data-container="body"><a href="{{ as_link }}#blm">BLM</a></th>
+                                <th><a href="{{ as_link }}#navajo">Navajo Nation</a></th>
+                                <th data-toggle="tooltip" title="" data-original-title="Heritage State Conservation Rank" data-container="body"><a href="{{ as_link }}#state-rank">State Rank</a></th>
+                                <th data-toggle="tooltip" title="" data-original-title="NatureServe Global Conservation Rank" data-container="body"><a href="{{ as_link }}#global-rank">Global Rank</a></th>
+                                <th data-toggle="tooltip" title="" data-original-title="Rarity-Endangerment-Distribution:<br>1 (least), 2, or 3 (most)" data-container="body" data-html="true"><a href="{{ as_link }}#red-code">R-E-D Code</a></th>
+                                <th data-toggle="tooltip" title="" data-original-title="New Mexico Rare Plant Technical Council (NMRPTC)" data-container="body"><a href="{{ as_link }}#nmrptc">NMRPTC Status</a></th>
+                                <th><a href="{{ as_link }}#strategy">Strategy Status</a></th>
                             </tr>
                             <tr>
                                 <td data-toggle="tooltip" title="" data-original-title="{{ node.field_fedstatusinnm[0].entity.description.value }}" data-container="body" data-html="true">{{  content.field_fedstatusinnm.0 }}</td>
@@ -121,7 +122,7 @@ Tips:
                     {% if node.field_strategy_species.0.entity.name.value == 'SS' %}
                     <div class="table-responsive">
                         <table class="table">
-                            <caption>Conservation Status</caption>
+                            <caption><a href="https://nhnm.unm.edu/sites/default/files/nonsensitive/NM_Plant_Score_Card_with_Common_Name.xlsx">Rare Plant Conservation Scorecard Summary</a></caption>
                             <tr>
                                 {% if not content.field_strategy_overallstatus.0 == '' %}
                                 <th>{{ content.field_strategy_overallstatus['#title'] }}</th>
@@ -152,7 +153,6 @@ Tips:
                         </table>
                     </div>
 
-                    <p><a href="https://nhnm.unm.edu/sites/default/files/nonsensitive/NM_Plant_Score_Card_with_Common_Name.xlsx">Rare Plant Conservation Scorecard Summary</a></p>
                     {% endif %}
                 </div>
             </div>

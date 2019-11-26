@@ -255,11 +255,25 @@ td{
   background:#fff;
 }
 
+#primary caption a, 
+#primary caption a:link, 
+#primary caption a:visited {
+  color: #666;
+  text-decoration: none;
+}
+
 #primary th {
   font-weight: bold;
   padding:10px 10px;
   background:#555;
   color:#fff;
+}
+
+#primary th a,
+#primary th a:link,
+#primary th a:visited {
+  color: #FFF;
+  text-decoration: none;
 }
 
 #primary tr{
