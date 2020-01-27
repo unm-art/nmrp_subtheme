@@ -9,6 +9,11 @@ global-scripts:
   dependencies:
     - core/jquery
 
+print:
+  css:
+    theme:
+      assets/css/print.css: { media: print }
+
 taxon:
   css:
     theme:
