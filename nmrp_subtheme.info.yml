@@ -8,9 +8,10 @@ base theme: nexus
 libraries:
   - nmrp_subtheme/global-styling
   - nmrp_subtheme/global-scripts
+  - nmrp_subtheme/print
 
 libraries-override:
-  nexus/global-css: 
+  nexus/global-css:
     css:
       theme:
         assets/css/bootstrap.min.css: assets/css/bootstrap.min.css
