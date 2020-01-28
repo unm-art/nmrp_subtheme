@@ -34,7 +34,7 @@ Tips:
                         }
                     %}
                     <li id="thumb_img_{{ key }}">
-                        <a href="{{ file_url(node.field_plant_images[key].entity.field_media_image[0].entity.uri.value) }}" class="nmrp-img" data-copyright='{% if node.field_plant_images[key].entity.field_copyright_date.value != null %}{{ node.field_plant_images[key].entity.field_copyright_date.value|date("Y") }}{% endif %}' 
+                        <a href="{{ file_url(node.field_plant_images[key].entity.field_media_image[0].entity.uri.value) }}" class="nmrp-img" data-copyright='{% if node.field_plant_images[key].entity.field_copyright_date.value != null %}{{ node.field_plant_images[key].entity.field_copyright_date.value|date("Y") }}{% endif %}'
                            data-photographer="{% if node.field_plant_images[key].entity.field_photographer.value != null %}{{ node.field_plant_images[key].entity.field_photographer.value }}{% endif %}">
                             {{ imagestyle }}
                         </a>
@@ -51,8 +51,8 @@ Tips:
                 <div class="{% if defaultimg %}col-lg-5{% endif %}">
                     <!-- PRIMARY PHOTO -->
                     <figure>
-                        <a href="{{ file_url(defaultimg.entity.field_media_image[0].entity.uri.value) }}" class="nmrp-img" 
-                           data-copyright='{% if defaultimg.entity.field_copyright_date.value != null %}{{ defaultimg.entity.field_copyright_date.value|date("Y") }}{% endif %}' 
+                        <a href="{{ file_url(defaultimg.entity.field_media_image[0].entity.uri.value) }}" class="nmrp-img"
+                           data-copyright='{% if defaultimg.entity.field_copyright_date.value != null %}{{ defaultimg.entity.field_copyright_date.value|date("Y") }}{% endif %}'
                            data-photographer="{% if defaultimg.entity.field_photographer.value != null %}{{ defaultimg.entity.field_photographer.value }}{% endif %}">
                         {{ {
                             '#theme':      'image_style',
@@ -65,17 +65,17 @@ Tips:
                             {% if defaultimg.entity.field_photographer.value != null %}
                             Photograph by <cite>{{ defaultimg.entity.field_photographer.value }}</cite>
                             {% endif %}
-                        
+
                             {% if defaultimg.entity.field_copyright_date.value != null %}
                             ({{ defaultimg.entity.field_copyright_date.value|date("Y") }})
                             {% endif %}
                         </figcaption>
                     </figure>
 
-                    
+
                 </div>
                 <div class="{% if defaultimg %}col-lg-7{% else %}col-lg-12{% endif %}">
-                    
+                    <button onclick="callPrint()">Print</button>
                     <!-- FAMILY -->
                     <div class="field field--label-inline field--name-field-family">
                         <div class="field__label">{{ node.field_family.fieldDefinition.label }}</div>
@@ -102,7 +102,7 @@ Tips:
                                 {% if not content.field_strategy_threats.0 == '' %}
                                 <th>{{ content.field_strategy_threats['#title'] }}</th>
                                 {% endif %}
-                
+
                                 {% if not content.field_strategy_actions.0 == '' %}
                                 <th>{{ content.field_strategy_actions['#title'] }}</th>
                                 {% endif %}
@@ -115,11 +115,11 @@ Tips:
                                 {% if not content.field_strategy_threats.0 == '' %}
                                 <td>{{ content.field_strategy_threats.0 }}</td>
                                 {% endif %}
-                
+
                                 {% if not content.field_strategy_actions.0 == '' %}
                                 <td>{{ content.field_strategy_actions.0 }}</td>
                                 {% endif %}
-                
+
                             </tr>
                         </table>
                     </div>
@@ -171,7 +171,7 @@ Tips:
                     {# if node.field_element_subnational_id.0.value != '' #}
                     <p><a target="_blank" href="https://nhnm.unm.edu/bcd/species/{{node.field_element_subnational_id.0.value}}">For distribution maps and more information, visit Natural Heritage New Mexico</a></p>
                     {# endif #}
-                    
+
                 </div>
             </div>
         </div>

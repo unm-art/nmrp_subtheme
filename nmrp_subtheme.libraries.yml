@@ -13,7 +13,8 @@ print:
   css:
     theme:
       assets/css/print.css: { media: print }
-
+  js:
+    assets/js/print.js: {}
 taxon:
   css:
     theme:
