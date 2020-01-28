@@ -17,6 +17,7 @@ div#page.plant-species #highlighted-block,
 div#page.plant-species #main-menu,
 div#page.plant-species nav,
 div#page.plant-species .col-lg-7 p:last-child,
+div#page.plant-species .print__button,
 div#page.plant-species .footer-block
 {
   display: none;
