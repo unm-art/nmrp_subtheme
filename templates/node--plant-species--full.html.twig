@@ -93,7 +93,7 @@ Tips:
                     {% if node.field_strategy_species.0.entity.name.value == 'SS' %}
                     <div class="table-responsive">
                         <table class="table">
-                            <caption><a href="https://nhnm.unm.edu/sites/default/files/nonsensitive/NM_Plant_Score_Card_with_Common_Name.xlsx">Rare Plant Conservation Scorecard Summary</a></caption>
+                          <caption><a data-toggle="tooltip" title="" data-original-title="Download the Rare Plant Conservation Scorecard Summary" href="https://nhnm.unm.edu/sites/default/files/nonsensitive/NM_Plant_Score_Card_with_Common_Name.xlsx">Rare Plant Conservation Scorecard Summary</a></caption>
                             <tr>
                                 {% if not content.field_strategy_overallstatus.0 == '' %}
                                 <th>{{ content.field_strategy_overallstatus['#title'] }}</th>
