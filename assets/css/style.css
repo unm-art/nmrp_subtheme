@@ -501,6 +501,25 @@ h1#site-title a:link, h1#site-title a:visited{
 }
 
 
+/*-------------------------------------------*
+/* Pagination
+/*-------------------------------------------*/
+.pagination {
+  margin-left: 0;
+}
+
+.page-item.active .page-link {
+  background-color: #588C63;
+  border-color: #588C63;
+  color: #fff;
+}
+
+a.page-link:hover {
+  color: #588C63;
+  background-color: #ffffff;
+  border-color: #aeceb4;
+}
+
 
 /*-------------------------------------------*
 /* Footer Menu
