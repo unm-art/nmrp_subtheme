@@ -10,19 +10,11 @@ libraries:
   - nmrp_subtheme/global-scripts
   - nmrp_subtheme/print
 
+# Override the parent theme styling completely.
 libraries-override:
-  nexus/global-css:
-    css:
-      theme:
-        assets/css/bootstrap.min.css: assets/css/bootstrap.min.css
-        assets/css/style.css: assets/css/style.css
-  nexus/global-js:
-    js:
-      assets/js/bootstrap.min.js : assets/js/bootstrap.min.js
-  nexus/slider-js:
-    js:
-      assets/js/slide.js : assets/js/slide.js
-
+  nexus/global-css: false
+  nexus/global-js: false
+  nexus/slider-js: false
 
 # Regions (must match base theme)
 regions:
