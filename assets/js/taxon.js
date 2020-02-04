@@ -6,7 +6,7 @@
 (function($){
 
     // Enable bootstrap tooltips
-    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="tooltip"]').tooltip({container: 'body', boundary: 'window', placement: 'top'});
 
     let images = document.getElementsByClassName('nmrp-img'),
         overlay = document.getElementById('nmrp-img-overlay');
