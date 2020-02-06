@@ -14,10 +14,10 @@ show_breadcrumbs: 1
 slide1_head: 'New Mexico Rare Plants'
 slide2_head: ''
 slide3_head: ''
-slide1_desc: "Our Mission Is To Form A Current And Accurate List Of New Mexico's Rare Plants"
+slide1_desc: ""
 slide2_desc: ''
 slide3_desc: ''
-slide1_url: ''
+slide1_url: '/about'
 slide2_url: ''
 slide3_url: ''
 slide1_image: {  }
