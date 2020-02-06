@@ -4,6 +4,7 @@ global-styling:
       assets/css/bootstrap.min.css: {}
       assets/css/slicknav.min.css: {}
       assets/css/flexslider.css: {}
+      assets/css/font-awesome.min.css: {}
       assets/css/style.css: {}
       assets/css/custom.css: {}
 
