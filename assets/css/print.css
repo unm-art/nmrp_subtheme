@@ -1,10 +1,16 @@
 body,
-div#page.plant-species #main-content .container{
+div#page.plant-species #main-content .container
+{
   background-color: #fff;
   font-size: 1em;
   padding: 0;
   margin: 0;
   max-width: 8in;
+}
+
+div#page.plant-species #main-content .container
+{
+  padding: 15px;
 }
 
 div#page.plant-species a[href]:link:after,
@@ -13,36 +19,28 @@ div#page.plant-species a[href]:visited:after
   content: "";
 }
 
+div#page.plant-species header#masthead,
 div#page.plant-species #highlighted-block,
-div#page.plant-species #main-menu,
-div#page.plant-species nav,
-div#page.plant-species .col-lg-7 p:last-child,
-div#page.plant-species .print__button,
-div#page.plant-species .footer-block
+div#page.plant-species div#footer-block,
+div#page.plant-species div#bottom,
+div#page.plant-species footer
 {
   display: none;
 }
 
-div#page.plant-species .col-lg-5 {
-  width: 100%;
-  padding: 0;
+
+div#page.plant-species .table-responsive table tr
+{
   margin: 0;
-  float: none;
-  clear: both;
+  padding: 0;
 }
 
-div#page.plant-species .col-lg-7 {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  float: none;
-  clear: both;
-}
-
-div#page.plant-species .table-responsive table tr{
-  margin: 0;
-  padding: 0;
-}
-div#page.plant-species .table-responsive table{
+div#page.plant-species .table-responsive table
+{
   border: 1px solid #ddd; !important
+}
+
+.row
+{
+  display: block;
 }
