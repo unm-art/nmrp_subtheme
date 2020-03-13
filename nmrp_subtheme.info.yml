@@ -2,19 +2,12 @@ name: 'NMRP Subtheme'
 type: theme
 description: 'Theme customizations for NMRP'
 core: 8.x
-base theme: nexus
 
 # Add css/js.
 libraries:
   - nmrp_subtheme/global-styling
   - nmrp_subtheme/global-scripts
   - nmrp_subtheme/print
-
-# Override the parent theme styling completely.
-libraries-override:
-  nexus/global-css: false
-  nexus/global-js: false
-  nexus/slider-js: false
 
 # Regions (must match base theme)
 regions:
