@@ -25,7 +25,7 @@ function nmrp_subtheme_preprocess_page(&$variables) {
   $variables['slide1_desc'] = check_markup(theme_get_setting('slide1_desc', $theme_name), 'full_html');
   $variables['slide1_url'] = theme_get_setting('slide1_url', $theme_name);
   // slide1_image
-  $fid = theme_get_setting("slide1_image", "nmrp_subtheme");
+  $fid = theme_get_setting("slide1_image", $theme_name);
   if (!empty($fid)) {
     $file = \Drupal\file\Entity\File::load($fid[0]);
     $uri = $file->getFileUri();
@@ -41,7 +41,7 @@ function nmrp_subtheme_preprocess_page(&$variables) {
   $variables['slide2_desc'] = check_markup(theme_get_setting('slide2_desc', $theme_name), 'full_html');
   $variables['slide2_url'] = theme_get_setting('slide2_url', $theme_name);
   // slide2_image
-  $fid = theme_get_setting("slide2_image", "nmrp_subtheme");
+  $fid = theme_get_setting("slide2_image", $theme_name);
   if (!empty($fid)) {
     $file = \Drupal\file\Entity\File::load($fid[0]);
     $uri = $file->getFileUri();
@@ -56,7 +56,7 @@ function nmrp_subtheme_preprocess_page(&$variables) {
   $variables['slide3_desc'] = check_markup(theme_get_setting('slide3_desc', $theme_name), 'full_html');
   $variables['slide3_url'] = theme_get_setting('slide3_url', $theme_name);
   // slide3_image
-  $fid = theme_get_setting("slide3_image", "nmrp_subtheme");
+  $fid = theme_get_setting("slide3_image", $theme_name);
   if (!empty($fid)) {
     $file = \Drupal\file\Entity\File::load($fid[0]);
     $uri = $file->getFileUri();
@@ -82,6 +82,28 @@ function nmrp_subtheme_preprocess_page(&$variables) {
 }
 
 
+/**
+ * Prepares variables for comment templates.
+ *
+ * Default template: comment.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the comment and entity objects.
+ *     Array keys: #comment, #commented_entity.
+ */
+function nmrp_subtheme_preprocess_breadcrumb(&$variables) {
+  // Set cache context as 'URL'.
+  $variables['#cache']['contexts'][] = 'url';
+
+  // Set breadcrumb.
+  if(($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']){
+    $variables['breadcrumb'][] = array(
+      'text' => $node->getTitle(),
+      'url' => $node->URL()
+   );
+  }
+}
 
 
 /**
