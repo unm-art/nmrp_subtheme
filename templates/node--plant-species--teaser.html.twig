@@ -7,6 +7,8 @@ Tips:
 {{ dump(_context|keys) }}
 #}
 
+{{ dump() }}
+
 {{ attach_library('nmrp_subtheme/taxon') }}
 
 <article{{ attributes }}>
@@ -50,7 +52,7 @@ Tips:
                         <a href="/node/{{ node.nid.0.value }}">{{ node.title.0.value }}</a>
                     </h2>
 
-                    <p>{{  node.field_description.0.value|length > 250 ? node.field_description.0.value|slice(0, 250) ~ '...' : node.field_description.0.value }}</p>
+                    <p>{{  node.field_description.0.value|length > 250 ? node.field_description.0.value|striptags|slice(0, 250) ~ '...' : node.field_description.0.value|striptags }}</p>
 
                     <!-- AGENCY STATUS -->
                     {% include '@nmrp_subtheme/includes/agency-status.html.twig' %}
